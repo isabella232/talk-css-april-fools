@@ -1,4 +1,7 @@
 let config = {
+  paths: {
+    watched: ['app/assets', 'app/styles/', 'app/javascripts/']
+  },
   files: {
     javascripts: {
       joinTo: {
