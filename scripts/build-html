@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+pug ./app/html/index.pug -O ./data.json -o ./app/assets/

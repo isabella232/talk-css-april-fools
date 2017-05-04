@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="en"><head><title>Comment faire un moteur de recherche en pur CSS ?</title><meta name="twitter:site" content="Comment faire un moteur de recherche en pur CSS ?"><meta property="og:title" content="Comment faire un moteur de recherche en pur CSS ?"><meta property="og:site_name" content="Comment faire un moteur de recherche en pur CSS ?"><meta name="description" content="Comment faire un moteur de recherche en pur CSS ?"><meta name="twitter:description" content="Comment faire un moteur de recherche en pur CSS ?"><meta property="og:description" content="Comment faire un moteur de recherche en pur CSS ?"><meta name="author" content="Tim Carry"><meta name="twitter:creator" content="pixelastic"><meta property="og:url" content="http://talks.pixelastic.com/slides/algolia-css-search-paris-css/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="http://talks.pixelastic.com/slides/algolia-css-search-paris-css//img/opengraph.png"><meta property="og:image" content="http://talks.pixelastic.com/slides/algolia-css-search-paris-css//img/opengraph.png"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" type="text/css" href="./main.css"><link rel="shortcut icon" href="./favicon.ico"></head><body><div class="reveal"><div class="slides bg-white lh-copy bunting f3 fw3"><!-- Title--><section class="slide--horizontal slide--theme1"><div class="bg-gradient-primary white h-100 flcnw flc"><div class="f-subheadline lh-title mh6 ph6">Comment faire un moteur de recherche en pur CSS ?</div></div></section><!-- Speaker presentation--><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">Tim Carry</div><div class="fla flcnw flccv"><div class="fln flrw mh5"><div class="fln w-third flc"><img class="h5 br3" src="./img/avatar.jpg"></div><div class="fln w-two-thirds flc f1 b">@pixelastic</div><div class="fln w-third flrch"><div class="bg-black-80 br3 pa3 w5 f0 ma3 flc"><img src="./img/algolia-dark.svg"></div></div><div class="fln w-third flrch"><div class="bg-black-80 br3 pa3 w5 f0 ma3 flc"><img src="./img/humantalks.png"></div></div><div class="fln w-third flrch"><div class="bg-black-80 br3 pa3 w5 f0 ma3 flc"><img src="./img/techlunch.png"></div></div></div></div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">Algolia</div><div class="fla flcnw flccv">Rapide présentation Algolia
+SaaS Search
+API client dans plein de langage
+Speed, Relevance, UX</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">April Fools</div><div class="fla flcnw flccv">Histoire du poisson d'avril
+expliquer que c'était un poisson d'avril
+donner les dates
+nombres de vues
+troublé les pistes. product hunt, release, mais surtout démo</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">Démo</div><div class="fla flcnw flccv">Démo
+instant search
+nombre de résultats
+highlight
+faceting
+custom ranking</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">Idea</div><div class="fla flcnw flccv">naissance de l'idée
+octobre dernier
+idée avec collègues
+premier proto (retrouver les gifs?)
+ajouter des features au fur et à mesure
+améliorer l'algo pour générer moins de CSS
+bug sur le nombre max de selecteurs</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">CSS Strengths</div><div class="fla flcnw flccv">Comment on fait un truc si compliqué en CSS
+Pas de variables, de conditions, de loops, de functions, de regexp
+En même temps, CSS est super fort pour ses selecteurs
+Il peut selectionner n'importe quoi dans une liste en fonction de ses caracs
+Ça corresponds pas mal à la définition d'un moteur de recherche</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">Base Skills</div><div class="fla flcnw flccv">technique de base
+selecteur d'attribut
+~ selector
+pseudo element content
+expliquer les trois individuellement
+puis les 3 ensemble</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">JavaScript</div><div class="fla flcnw flccv">JavaScript
+CSS ne rearde que la valeur dans le html
+mettre à jour l'input n'update pas
+le but était de faire illusion, donc on a menti
+une ligne de js
+un peu obvious: cette value est égale à cette value
+sinon, pas d'update as-you-type</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">as you type</div><div class="fla flcnw flccv">as-you-type
+très important, car on est habitué au real-time
+si obligé d'appuyer sur enter, semble backward
+résultats doivent s'affichr au fur et à mesure</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">n-grams</div><div class="fla flcnw flccv">n-grams
+besoin de taper tout, pas pratique
+on peut trouver les résultats dès les premières lettre
+donc générer les n-grams
+quand on cherche on veut savoir les résultats qui correspondent à ce qu'on tape
+quand on créé le moteur, on veut trouver les suites de lettres qui
+corrrespondent à tel élément
+ça s'appelle l'indexing</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">Plusieurs résultats</div><div class="fla flcnw flccv">afficher plusieurs résultats
+juste mettre un after pas assez, veut en afficher plus
+crée plein de divs, leur mets leur data de base mais masqué
+display: block seulement si matche
+laisse l'empty query, qui doit tout afficher</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">Random order</div><div class="fla flcnw flccv">random order
+on est plus de 100, à chaque fois on voit les même dans le haut de page
+pas représentatif de qui ont est, et de notre flat hierarchy
+donc affichage random des résultats
+cherché longtemps comment faire du random en CSS
+peut utiliser order: en flexbox pour choisir l'ordre
+un peu triché pour ça
+peut le faire en SCSS? mais pas vraiment random (XKCD: random number generator)
+CSS généré coté serveur random, qui attribut un order random à chacun
+donc ordre différent à chaque load
+webtask.io pour ça, super Gist + Heroku par Auth0</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">Layout</div><div class="fla flcnw flccv">amélioration de la mise en page
+nom, prénom, image et job title
+image vient de cloudinary pour avoir noir et blanc, rond et même format
+nom et job title sont dans le before avec un saut de ligne
+au hover, ajoute un fun fact</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">searchable attributes</div><div class="fla flcnw flccv">plus de searchableAttributes
+par défaut chercher seulement sur first name
+ajouté last name, et job title
+si j'affiche des infos, je dois permettre e rechercher dessus, sinon frustrant
+chaque nouvel attribut je dois générer des n-grams pour ça
+augmente la taille du fichier</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">Feintes</div><div class="fla flcnw flccv">quelques feintes
+noms composés et lettres accentuées
+besoin de trouver avec ou sans l'accent
+besoin de trouver RCS sur Remy ou Christophe
+générer des n-grams pour ça</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">Highlight</div><div class="fla flcnw flccv">highlight
+peut trouver dans plein de choses
+parfois dur de voir pourquoi une personne est affichée
+besoin de highlight
+montrer l'exemple de google
+doit etre visible, mais pas trop
+doit permettre de comprendre pourquoi un résultat est là, mais doit voir le
+résultat en premier</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">Custom Font</div><div class="fla flcnw flccv">generated content, donc peut pas utiliser de css dessus
+utilise donc une font custom, qui est le merge d'une font de base et d'une bold
+mise dans le private-use area
+example du code du before
+ces characteres sont des versions bold</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">Order</div><div class="fla flcnw flccv">ordre d'affichage
+maintenant on voit tout ce qui s'affiche
+on comprends pourquoi tel résultat est là
+mais on se demande pourquoi il est avant un autre
+l'ordre est random parce que j'affiche tout en random
+je doit classer par ordre de pertinence
+first name > last name > job title
+poids sur les attributs, d'abord ceux du first name, puis ceux du last name (ex:
+Kim)</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">Custom ranking</div><div class="fla flcnw flccv">même nom
+mais plusieurs personnes s'appellent Alex, ou Nicolas
+Comment les ranger?
+On utilise un custom ranking, des données métiers
+Masquées à l'utilisateur, mais utilisée dans le ranking
+peut etre un score de popularité si c'était des chanteurs
+là, c'est juste la date d'arrivée. Les premiers employés sont avant les plus
+récents</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">Tie-breaking</div><div class="fla flcnw flccv">Tie-Breaking
+fonctionne selon un principe de buckets
+"Ch"
+d'abord les matches dans le first name, puis last name, puis job
+dans chaque bucket, rangé par ordre d'arrivée
+API prends en comte plus de uckets, ainsi que le nombre de typos</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">Typos</div><div class="fla flcnw flccv">typos
+certaines personnes ont des noms compliqués
+on va faire des fautes, on ne sait pas comment ça s'écrit
+gros doigts sur mobile
+important d'etre tolerent à la faute de frappe
+shermesser? schermeser?
+générer de nouveaux n-grams pour les fautes
+techniquement une faute se calcule avec la distance de levenshtein
+nombre d'ajout, suppression, permutations pour arriver au mot
+peut se générer, mais ferait un fichier CSS bien trop gros
+me suis limité à un seul type de faute
+où on enlever une lettre
+et bien sur celui que j'utilise dans la démo
+garde le highlight</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">Synonyms</div><div class="fla flcnw flccv">synonyms
+en vrai personne appelle Rémy-Christophe comme ça
+on utilise RCS
+on a l'habitude de se voir sur github, par login
+donc ajout de synonymes
+ajouter un nouveau n-gram à un résultat
+mais pour pas perturber l'utilisateur, surligner celui-là</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">Facets</div><div class="fla flcnw flccv">facets
+chaque eployé fait parti d'une team
+12 divs vides avec ids uniques
+contenu rempli avec CSS comme pour les résultats
+affichés/masqués en fonction de la query tapée
+nombre de résultats mis à jour aussi
+choisir facet
+radio hack
+chaque facet est un label, lié à un bouton radio en haut de la page
+quand clique sur label, selectionne radio
+selon la facet selectionnée, permet de définir un état global à la page
+avec checked + next element
+dans ce cas, je masque tous les résultats qui ne sont PAS de la facet
+selectionnée
+
+changer de facet
+parce que radio, peut cliquer sur n autre et seulement un est selectionné à la
+fois, change l'affichage
+parce que utilise des order flexbox, il y a des trous dans le display, mais
+quand même dans le bon ordre
+par contre, doit pouvoir unselect une facet et pas possible d'unselect un radio
+pour ça, jtuilisé un 13e element
+quand je clique sur un label, il se masque, et je mets ce label en plus à la
+place (même nom, même count)
+quand je clique dessus, c'est comme si je selectionnais un label nutile, donc
+désélectionne tout
+utiliser flexbox order pour le mettre où il faut</div></div></section><section class="slide--vertical"><div class="h-100 flcnw pa3"><div class="fln f1 lh-title tl b">Conclusion</div><div class="fla flcnw flccv">conclusion
+ne l'utilisez pas en production
+taille du fichier CSS grossit trop, trop vite
+peut pas gérer correctement toutes les typos
+permet de comprendre comment le moteur marche
+bien plus puissant par l'API
+plein de edge case pas gérés par mon implementation
+peut pas savoir que impossible tant que pas essayé</div></div></section><div class="aside--horizontal absolute right-0 bottom-0 left-0 z-5 flrnw"><a class="fln bg-deep-cove pv3 ph4" href="https://www.algolia.com/"><img class="w4" src="./ui/algolia-logo-dark-bg.svg"></a><div class="fla bg-gradient-primary bg-white--theme1 flcnw flccv tr pr4 f6 white bunting--theme1"><div class="fw4">Comment faire un moteur de recherche en pur CSS ?</div><div class="fw3">Tim Carry</div></div></div><div class="aside--vertical absolute top-0 bottom-0 left-0 z-5 flcnw"><a class="fln flccv bg-deep-cove pa3" href="https://www.algolia.com/"><img class="h2" src="./ui/algolia-logo-dark-bg.svg"></a><div class="fla bg-gradient-primary flcnw f6 white"><div class="fw4 mta">Comment faire un moteur de recherche en pur CSS ?</div><div class="fw3 mb3">Tim Carry</div></div></div></div></div><script src="./js/vendors/reveal.js"></script><script src="./js/vendors/lodash.js"></script><script src="./js/vendors/jquery.js"></script><script src="./vendor.js"></script><script src="./app.js"></script><script>require('javascripts/app').default.init()</script></body></html>

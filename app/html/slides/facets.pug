@@ -1,0 +1,31 @@
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Facets
+    .fla.flcnw.flccv
+      |facets
+      |chaque eployé fait parti d'une team
+      |12 divs vides avec ids uniques
+      |contenu rempli avec CSS comme pour les résultats
+      |affichés/masqués en fonction de la query tapée
+      |nombre de résultats mis à jour aussi
+      |choisir facet
+      |radio hack
+      |chaque facet est un label, lié à un bouton radio en haut de la page
+      |quand clique sur label, selectionne radio
+      |selon la facet selectionnée, permet de définir un état global à la page
+      |avec checked + next element
+      |dans ce cas, je masque tous les résultats qui ne sont PAS de la facet
+      |selectionnée
+      |
+      |changer de facet
+      |parce que radio, peut cliquer sur n autre et seulement un est selectionné à la
+      |fois, change l'affichage
+      |parce que utilise des order flexbox, il y a des trous dans le display, mais
+      |quand même dans le bon ordre
+      |par contre, doit pouvoir unselect une facet et pas possible d'unselect un radio
+      |pour ça, jtuilisé un 13e element
+      |quand je clique sur un label, il se masque, et je mets ce label en plus à la
+      |place (même nom, même count)
+      |quand je clique dessus, c'est comme si je selectionnais un label nutile, donc
+      |désélectionne tout
+      |utiliser flexbox order pour le mettre où il faut
