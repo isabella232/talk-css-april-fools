@@ -1,11 +1,26 @@
 section.slide--vertical
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b JavaScript
-    .fla.flcnw.flccv
-      |JavaScript
-      |CSS ne rearde que la valeur dans le html
-      |mettre à jour l'input n'update pas
-      |le but était de faire illusion, donc on a menti
-      |une ligne de js
-      |un peu obvious: cette value est égale à cette value
-      |sinon, pas d'update as-you-type
+    .fln.f1.lh-title.tl.b (Almost) No JavaScript
+    .fla.flcnw
+      .fla.flrnw
+        .fln.w-50.flc
+          .fln
+            pre.bg-near-black.ph4.pt4.lh-copy.tl
+              code.language-html
+                |&lt;input type="text" value="Josh"/&gt;
+                |&lt;div class="result"&gt;&lt;/div&gt;
+            pre.bg-near-black.pa4.lh-copy.tl
+              code.language-scss
+                |input[value="Tim"] ~ .result:after {
+                |  content: "Tim Carry";
+                |}
+        .fln.w-50.flc
+          .fln.flrnw.pa2.flspbh
+            input.fln.pa2.br2(type="text" value="Tim")
+            .db.ba.w3.h3.ml4
+      .fla.flc
+        .fln.flcnw
+            pre.bg-near-black.pa4.lh-copy.tl.fragment
+              code.language-html
+                |&lt;input type="text" onchange="this.setAttribute('value', this.value)" /&gt;
+

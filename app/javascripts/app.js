@@ -12,7 +12,19 @@ let Talk = {
       progress: true,
       history: true,
       center: true,
-      transition: 'linear'
+      transition: 'linear',
+
+      dependencies: [{
+        src: 'js/vendors/classList.js',
+        condition: () => {
+          return !document.body.classList;
+        }
+      }, {
+        src: 'js/vendors/prism.js',
+        callback: () => {
+          Prism.highlightAll();
+        }
+      }]
     });
 
     Talk.$slides = $('.slides').first();

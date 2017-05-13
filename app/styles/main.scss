@@ -7,5 +7,6 @@
 .reveal {
   @import './vendors/_tachyons';
   @import './_utils';
+  @import './_code';
   @import './_layouts';
 }
