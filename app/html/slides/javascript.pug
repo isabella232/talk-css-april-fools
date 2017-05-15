@@ -8,10 +8,10 @@ section.slide--vertical
             pre.bg-near-black.ph4.pt4.lh-copy.tl
               code.language-html
                 |&lt;input type="text" value="Josh"/&gt;
-                |&lt;div class="result"&gt;&lt;/div&gt;
+                |&lt;div id="result"&gt;&lt;/div&gt;
             pre.bg-near-black.pa4.lh-copy.tl
               code.language-scss
-                |input[value="Tim"] ~ .result:after {
+                |input[value="Tim"] ~ #result:after {
                 |  content: "Tim Carry";
                 |}
         .fln.w-50.flc

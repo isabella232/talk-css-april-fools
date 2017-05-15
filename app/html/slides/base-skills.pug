@@ -37,14 +37,14 @@ section.slide--vertical
             pre.bg-near-black.pa4.lh-copy.tl
               code.language-html
                 |&lt;div&gt;1&lt;/div&gt;
-                |&lt;div class="foo"&gt;2&lt;/div&gt;
+                |&lt;div id="foo"&gt;2&lt;/div&gt;
 
         .fln.w-50.flc
           .fln
             .f3 CSS
             pre.bg-near-black.pa4.lh-copy.tl
               code.language-scss
-                |.foo:after {
+                |#foo:after {
                 |  content: "♥"
                 |}
       .fla.flc
@@ -93,14 +93,14 @@ section.slide--vertical
             pre.bg-near-black.pa4.lh-copy.tl
               code.language-html
                 |&lt;input type="text" value="Tim" /&gt;
-                |&lt;div class="result"&gt;&lt;/div&gt;
+                |&lt;div id="result"&gt;&lt;/div&gt;
 
         .fln.w-50.flc
           .fln
             .f3 CSS
             pre.bg-near-black.pa4.lh-copy.tl
               code.language-scss
-                |input[value="Tim"] ~ .result:after {
+                |input[value="Tim"] ~ #result:after {
                 |  content: "Tim Carry";
                 |}
       .fla.flc

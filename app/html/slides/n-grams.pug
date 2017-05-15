@@ -1,4 +1,4 @@
-section.slide--vertical
+section.slide--vertical(data-transition='fade-in')
   .h-100.flcnw.pa3
     .fln.f1.lh-title.tl.b More people
     .fla.flcnw
@@ -7,13 +7,13 @@ section.slide--vertical
           .fln
             pre.bg-near-black.pa3.lh-copy.tl
               code.language-scss
-                |input[value="Tim"] ~ .result:after {
+                |input[value="Tim"] ~ #result:after {
                 |  content: "Tim Carry";
                 |}
-                |input[value="Emily"] ~ .result:after {
+                |input[value="Emily"] ~ #result:after {
                 |  content: "Emily Hayman";
                 |}
-                |input[value="Kumiko"] ~ .result:after {
+                |input[value="Kumiko"] ~ #result:after {
                 |  content: "Kumiko Laroque";
                 |}
         .fln.w-40.flc
@@ -28,7 +28,7 @@ section.slide--vertical
               input.fln.pa2.br2.w4(type="text" value="Kumiko")
               .db.ba.ml2.pa3 Kumiko Laroque
 
-section.slide--vertical
+section.slide--vertical(data-transition='fade-in')
   .h-100.flcnw.pa3
     .fln.f1.lh-title.tl.b Only full matches...
     .fla.flcnw
@@ -37,13 +37,13 @@ section.slide--vertical
           .fln
             pre.bg-near-black.pa3.lh-copy.tl
               code.language-scss
-                |input[value="Tim"] ~ .result:after {
+                |input[value="Tim"] ~ #result:after {
                 |  content: "Tim Carry";
                 |}
-                |input[value="Emily"] ~ .result:after {
+                |input[value="Emily"] ~ #result:after {
                 |  content: "Emily Hayman";
                 |}
-                |input[value="Kumiko"] ~ .result:after {
+                |input[value="Kumiko"] ~ #result:after {
                 |  content: "Kumiko Laroque";
                 |}
         .fln.w-40.flc
@@ -65,7 +65,7 @@ section.slide--vertical
       .fla.flc
         .f1.lh-title
           .blue.b Searching
-          .fragment.i
+          .fragment.i.mt2
             .di What will I find if I type 
             .di.b Tim
             .di ?
@@ -104,9 +104,9 @@ section.slide--horizontal
           .fln
             pre.bg-near-black.pa3.lh-copy.tl
               code.language-scss
-                |input[value="T"] ~ .result:after,
-                |input[value="Ti"] ~ .result:after,
-                |input[value="Tim"] ~ .result:after {
+                |input[value="T"] ~ #result:after,
+                |input[value="Ti"] ~ #result:after,
+                |input[value="Tim"] ~ #result:after {
                 |  content: "Tim Carry";
                 |}
         .fln.w-50.flc

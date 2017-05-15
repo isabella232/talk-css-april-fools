@@ -1,9 +1,37 @@
 section.slide--vertical
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Layout
-    .fla.flcnw.flccv
-      |amélioration de la mise en page
-      |nom, prénom, image et job title
-      |image vient de cloudinary pour avoir noir et blanc, rond et même format
-      |nom et job title sont dans le before avec un saut de ligne
-      |au hover, ajoute un fun fact
+    .fln.f1.lh-title.tl.b Layout (in one div)
+    .fla.flrnw.flc
+      .fln.w-60
+        .fake-browser.shadow-3.center.w-80
+          img.w-100(src='./img/layout.png')
+      .fln.w-40
+        img(src='./img/dustin.gif')
+        pre.bg-near-black.pa2.lh-copy.tl
+          code.language-html
+            |  &lt;div id="result_42"&gt;&lt;/div&gt;
+
+section.slide--vertical.debug
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Layout (in one div)
+    .fla.flrnw
+      .fla.flc
+        .fln
+          pre.bg-near-black.pa4.lh-copy.tl.f5
+            code.language-scss
+              |#result_42 {
+            code.language-scss
+              |}
+      .fln.flc.flcnw.w-30
+        .fln.f0
+          img(src='./img/dustin.gif')
+        .fln
+          pre.bg-near-black.pa2.lh-copy.f4
+            code.language-html
+              |  &lt;div id="result_42"&gt;&lt;/div&gt;
+
+// |amélioration de la mise en page
+// |nom, prénom, image et job title
+// |image vient de cloudinary pour avoir noir et blanc, rond et même format
+// |nom et job title sont dans le before avec un saut de ligne
+// |au hover, ajoute un fun fact

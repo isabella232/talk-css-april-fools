@@ -1,6 +1,6 @@
 {
-  "talk_title": "Comment faire un moteur de recherche en pur CSS ?",
-  "talk_description": "Comment un langage comme CSS peut être utilisé pour construire un moteur de recherche? En découpant le problème en une somme de plus petits challenges, nous pouvons les résoudre un par un en CSS.",
+  "talk_title": "How We Built A Search Engine In Pure CSS",
+  "talk_description": "How can a language like CSS be used to build a search engine? First, we need to understand how a search engine works. By splitting it into a sum of smaller problems, we’ll solve them one by one in CSS. Come and see how pseudo-elements, custom fonts or flexbox can be used in ways you never imagined.",
   "talk_author_name": "Tim Carry",
   "talk_author_twitter": "pixelastic",
   "talk_url": "http://talks.pixelastic.com/slides/algolia-css-search-paris-css/"

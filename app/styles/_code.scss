@@ -15,6 +15,9 @@ $oroshi-gray: $mid-gray;
   &.comment {
     color: $oroshi-gray;
   }
+  &.string {
+    color: $oroshi-blue;
+  }
   // &.property {
   //   color: #FF5F5F;
   // }
@@ -29,9 +32,6 @@ $oroshi-gray: $mid-gray;
   // }
   // &.constant {
   //    color: #FFAF00;
-  // }
-  // &.string {
-  //   color: #5F87AF;
   // }
   // &.number {
   //   color: #5F87AF;
