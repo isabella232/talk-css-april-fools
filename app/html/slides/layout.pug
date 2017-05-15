@@ -1,3 +1,4 @@
+// Pictures of the layout
 section.slide--vertical
   .h-100.flcnw.pa3
     .fln.f1.lh-title.tl.b Layout (in one div)
@@ -11,27 +12,88 @@ section.slide--vertical
           code.language-html
             |  &lt;div id="result_42"&gt;&lt;/div&gt;
 
-section.slide--vertical.debug
+// Cloudinary for the image
+section.slide--vertical
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Layout (in one div)
+    .fln.f1.lh-title.tl.b www.cloudinary.com
     .fla.flrnw
-      .fla.flc
-        .fln
-          pre.bg-near-black.pa4.lh-copy.tl.f5
+      .fla.flcnw
+        .fla.flcnw.flccv
+          pre.bg-near-black.pa2.lh-copy.tl.fln
             code.language-scss
               |#result_42 {
-            code.language-scss
+              |  background-image: url([…cloudinary url…]);
+              |  background-position: 50% 0;
+              |  background-size: 200px;
               |}
-      .fln.flc.flcnw.w-30
-        .fln.f0
-          img(src='./img/dustin.gif')
-        .fln
-          pre.bg-near-black.pa2.lh-copy.f4
-            code.language-html
-              |  &lt;div id="result_42"&gt;&lt;/div&gt;
+        .fla.flcnw.flccv
+          .bg-near-black.pa2.lh-copy.tl.near-white.dejavu
+            |http://res.cloudinary.com/{app_id}/image/fetch/
+            .db
+              .di.blue w_220
+              .di ,
+              .di.blue h_220
+              .di ,
+              .di.blue c_scale
+              .di ,
+              .di.blue r_max
+              .di ,
+              .di.blue e_grayscale
+              .di ,
+              .di.blue q_90
+              .di /
+            .db.green
+              |https://www.algolia.com/maxime.png
+          
+      .fln.flc.flcnw.w-third
+        .fla.f0.flc
+          img.w5(src='./img/gianluca-color.png')
+        .fla.f0.flc
+          img.w4(src='./img/gianluca-cloudinary.jpg')
 
-// |amélioration de la mise en page
-// |nom, prénom, image et job title
-// |image vient de cloudinary pour avoir noir et blanc, rond et même format
-// |nom et job title sont dans le before avec un saut de ligne
-// |au hover, ajoute un fun fact
+// Fun-fact hover
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Hover fun fact
+    .fla.flrnw
+      .fla.flc
+        pre.bg-near-black.pa2.lh-copy.tl
+          code.language-scss
+            |#result_42:after {
+            |  content: "[…fun fact…]";
+            |  opacity: 0;
+            |  position: absolute;
+            |  border-radius: 50%;
+            |  background-image: linear-gradient(
+            |    140deg,
+            |    rgba(12,105,172,.75) 10%,
+            |    rgba(24,35,89,.75) 90%
+            |  );
+            |}
+            |#result_42:hover:after {
+            |  opacity: 1;
+            |}
+      .fln.w-third.flc
+        img(src='./img/dustin.gif')
+
+// Multi-line name
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b ::before + \A + ::first-line
+    .fla.flrnw
+      .fla.flc
+        pre.bg-near-black.pa2.lh-copy.tl
+          code.language-scss
+            |#result_42 {
+            |  padding-top: 220px;
+            |  &:before {
+            |    content: "Dustin Coates \A Solution Engineer";
+            |    white-space: pre;
+            |  }
+            |  &:first-line {
+            |    font-weight: bold;
+            |    line-height: 2.2rem;
+            |  }
+            |}
+      .fln.w-third.flc
+        img(src='./img/dustin.png')
