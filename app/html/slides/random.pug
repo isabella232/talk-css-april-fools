@@ -1,3 +1,105 @@
+section.slide--horizontal.slide--theme1
+  .bg-gradient-primary.white.h-100.flcnw.flc
+    .f-subheadline.lh-title.mh6.ph6 Random display
+
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Random order
+    .fla.flrnw
+      .fla.relative.flc
+        .absolute
+          .fake-browser.shadow-3.center
+            img.w-100(src='./img/non-random.png')
+        .absolute.top-3.left-3.fragment
+          .fake-browser.shadow-3.center
+            img.w-100(src='./img/non-random.png')
+        .absolute.top-2.right-2.fragment
+          .fake-browser.shadow-3.center
+            img.w-100(src='./img/non-random.png')
+        .absolute.top-4.right-4.fragment
+          .fake-browser.shadow-3.center
+            img.w-100(src='./img/non-random.png')
+        .absolute.top-2.left-4.fragment
+          .fake-browser.shadow-3.center
+            img.w-100(src='./img/non-random.png')
+
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Flexbox order
+    .fla.flcnw
+      .fla.flrnw
+        .fln.w-50.flc
+          .fln
+            .f3 HTML
+            pre.bg-near-black.pa4.lh-copy.tl
+              code.language-html
+                |&lt;div class="foo"&gt;foo&lt;/div&gt;
+                |&lt;div class="bar"&gt;bar&lt;/div&gt;
+                |&lt;div class="baz"&gt;baz&lt;/div&gt;
+
+        .fln.w-50.flc
+          .fln
+            .f3 CSS
+            pre.bg-near-black.pa4.lh-copy.tl
+              code.language-scss
+                |.foo, .bar, .baz { flex: 1; }
+                |.foo { order: 3; }
+                |.bar { order: 1; };
+                |.baz { order: 2; }
+      .fla.flc
+        .fln.w-75.flrnw.flspah
+          .db.ba.w-20.h3.flc bar
+          .db.ba.w-20.h3.flc baz
+          .db.ba.w-20.h3.flc foo
+
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Random in CSS?
+    .fla.flrnw
+      .fla.flc
+        ul.list.tl.f1
+          li
+            span.b.dark-red No
+            | vars
+          li
+            span.b.dark-red No
+            | functions
+      .fla.flc.fragment.flcnw
+        .fln.f1.mb3 SCSS? Less? Stylus?
+        img.fln(src='./img/xkcd_random.png')
+
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b.flrnw.flrcv
+      img.h3.mr3(src='./img/webtask.svg')
+      .di webtask.io
+    .fla.flrnw.relative
+      .fla.flc.w-50.flcnw
+        .fake-browser.shadow-3.center.f0
+          img.w-100(src='./img/webtask-editor.png')
+        .bg-near-black.pa2.lh-copy.tl.near-white.dejavu.mt3
+          .di webtask.io/edit/
+          .di.green {appid}
+          .di /
+          .di.blue random-css
+      .fla.flc.w-50.flcnw
+        pre.bg-near-black.pa4.lh-copy.tl.f4
+          code.language-scss
+            |#result_1 { order: 4; }
+            |#result_2 { order: 8; }
+            |#result_3 { order: 15; }
+            |#result_4 { order: 16; }
+            |#result_5 { order: 23; }
+            |#result_6 { order: 42; }
+            |[…]
+        .bg-near-black.pa2.lh-copy.tl.near-white.dejavu.mt3
+          .di.green {appid}
+          .di .webtask.io/
+          .di.blue random-css
+      .absolute.top-2.left-4.fragment
+        .fake-browser.shadow-3.center
+          img.w-100(src='./img/random.gif')
+
 section.slide--vertical
   .h-100.flcnw.pa3
     .fln.f1.lh-title.tl.b Random order
