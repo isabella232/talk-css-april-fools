@@ -1,0 +1,154 @@
+// Inside the engine
+section.slide--horizontal.slide--theme1
+  .bg-gradient-primary.white.h-100.flcnw.flc
+    .f-subheadline.lh-title.mh6.ph6 Inside the engine
+
+// Searching VS Indexing
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Search Vs Indexing
+    .fla.flcnw.flc.mb5
+      .fla.flc
+        .f1.lh-title
+          .blue.b Searching
+          .fragment.i.mt2
+            .di What will I find if I type 
+            .di.b Tim
+            .di ?
+      .fla.flc
+        .f1.lh-title
+          .green.b Indexing
+          .fragment.i.mt2
+            .di What do I need to type to find 
+            .di.b Tim Carry
+            .di ?
+
+// First name, last name
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b N-grams
+    .fla.flcnw.flc
+      .fln.b.f1 
+        .di.bittersweet Tim
+        .di.shamrock  Carry
+      .fln.flrnw.tl.bg-deep-cove.ph3.f2.fragment
+        .fla.flcnw
+          .w5.bittersweet T
+          .w5.bittersweet Ti
+          .w5.bittersweet Tim
+        .fla.flcnw
+          .w5.shamrock C
+          .w5.shamrock Ca
+          .w5.shamrock Car
+          .w5.shamrock Carr
+          .w5.shamrock Carry
+
+// Prefix matches
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Prefix matching
+    .fla.flcnw
+      .fla.flrnw
+        .fln.w-50.flc
+          .fln
+            pre.bg-near-black.pa3.lh-copy.tl
+              code.language-scss
+                |input[value="t" i] ~ #result:after,
+                |input[value="ti" i] ~ #result:after,
+                |input[value="tim" i] ~ #result:after {
+                |  content: "Tim Carry";
+                |}
+        .fln.w-50.flc
+          .fln.flcnw
+            .fln.flrnw.pa2.flspbh
+              input.fln.pa2.br2(type="text" value="t")
+              .db.ba.ml4.pa3 Tim Carry
+            .fln.flrnw.pa2.flspbh
+              input.fln.pa2.br2(type="text" value="ti")
+              .db.ba.ml4.pa3 Tim Carry
+            .fln.flrnw.pa2.flspbh
+              input.fln.pa2.br2(type="text" value="tim")
+              .db.ba.ml4.pa3 Tim Carry
+
+// More n-grams
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Moar!
+    .fla.flcnw.flc
+      .fln.b.f1 
+        .di.bittersweet Tim
+        .di.shamrock  Carry
+        .di  - 
+        .di.koromiko Developer
+        .di.mulberry  Advocate
+      .fln.flrnw.tl.bg-deep-cove.ph3.f2
+        .fla.flcnw
+          .w5.bittersweet T
+          .w5.bittersweet Ti
+          .w5.bittersweet Tim
+        .fla.flcnw
+          .w5.shamrock C
+          .w5.shamrock Ca
+          .w5.shamrock Car
+          .w5.shamrock Carr
+          .w5.shamrock Carry
+        .fla.flcnw
+          .w5.koromiko D
+          .w5.koromiko De
+          .w5.koromiko Dev
+          .w5.koromiko Deve
+          .w5.koromiko Devel
+          .w5.koromiko Develop
+          .w5.koromiko Develope
+          .w5.koromiko Developer
+        .fla.flcnw
+          .w5.mulberry A
+          .w5.mulberry Ad
+          .w5.mulberry Adv
+          .w5.mulberry Advo
+          .w5.mulberry Advoc
+          .w5.mulberry Advoca
+          .w5.mulberry Advocat
+          .w5.mulberry Advocate
+
+// Edge-cases and features
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Edge-cases and features
+    .fla.flrw.tl
+      .fln.flrnw.flc.w-50.fragment(data-fragment-index="1")
+        .fln.f0.w5.flc
+          img.h5(src='./img/raph.png')
+        .fla 
+          .db Accented characters
+          .db.i.f4 "Raphaël", "Raphael"
+
+      .fln.flrnw.flc.w-50.fragment(data-fragment-index="2")
+        .fln.f0.w5.flc
+          img.h5(src='./img/marie-laure.png')
+        .fla 
+          .db Compound words
+          .db.i.f4 "Marie-Laure", "Marie Laure"
+
+      .fln.flrnw.flc.w-50.fragment(data-fragment-index="3")
+        .fln.f0.w5.flc
+          img.h5(src='./img/redox.png')
+        .fla 
+          .db Synonyms
+          .db.i.f4 "Sylvain", "Utard", "Redox"
+
+      .fln.flrnw.flc.w-50.fragment.relative(data-fragment-index="4")
+        .fln.f0.w5.flkc
+          img.h5(src='./img/rcs.png')
+        .fla.flcnw.flccv
+          .fln.h4
+            .db Typo-tolerance
+            .db.i.f4.relative
+              .di "Schermesser", "Scermesser", "Schermeser"
+              .di.fragment(data-fragment-index="6")
+                | , "Remy", "Rémy", "Rémy-Christophe", "Remy-Christophe", 
+                | "RCS", "Scala", 
+                | "Shermesser", "Scermesser",
+                | "ph'nglui mglw'nafh Schermesser R'lyeh wgah'nagl fhtagn",
+              img.absolute.top-0.left--3.fragment(src='./img/combo.gif', data-fragment-index="6")
+

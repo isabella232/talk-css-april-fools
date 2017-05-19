@@ -1,13 +1,110 @@
-// Pictures of the layout
+// Layout display
+section.slide--horizontal.slide--theme1
+  .bg-gradient-primary.white.h-100.flcnw.flc
+    .f-subheadline.lh-title.mh6.ph6 Make it pretty
+
+// Target layout
 section.slide--vertical
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Layout (in one div)
+    .fln.f1.lh-title.tl.b Layout
+    .fla.flrnw.flc.pa2
+      .fake-browser.shadow-3.center.w-80.f0
+        img.w-100(src='./img/screencast.gif')
+
+
+// Several results
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Pre-filled results
+    .fla.flcnw
+      .fla.flrnw
+        .fln.w-50.flc
+          .fln
+            pre.bg-near-black.pa3.lh-copy.tl.f4
+              code.language-html
+                |&lt;input type="text" oninput="…"/&gt;
+                |&lt;div id="results"&gt;
+                |  &lt;div id="result_1"&gt;&lt;/div&gt;
+                |  &lt;div id="result_2"&gt;&lt;/div&gt;
+                |  &lt;div id="result_3"&gt;&lt;/div&gt;
+                |&lt;/div&gt;
+
+        .fln.w-50.flc
+          .fln
+            pre.bg-near-black.pa3.lh-copy.tl.f4
+              code.language-scss
+                |//Pre-fill results
+                |#result_1:before { content: "Julien Lemoine"; }
+                |#result_2:before { content: "Josh Dzielak"; }
+                |#result_3:before { content: "Jonas Badalic"; }
+                |// Hide them all
+                |#results div { display: none; }
+                |// Display some on specific queries
+                |input[value="jo" i] ~ #results #result_2:before,
+                |input[value="jo" i] ~ #results #result_3:before {
+                |  display: block;
+                |}
+      .fla.flc
+        .fln.flcnw
+          .fln.flrnw.pa2.flspbh
+            input.fln.pa2.br2(type="text" value="jo")
+            .db.ba.pa3.ml3.o-30 Julien Lemoine
+            .db.ba.pa3.ml3.bg-green Josh Dzielak
+            .db.ba.pa3.ml3.bg-green Jonas Badalic
+
+// Many rules
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Lots of rules...
+    .fla.flcnw
+      .fla.flrnw
+        .fln.w-50.flc
+          .fln
+            pre.bg-near-black.pa3.lh-copy.tl.f5
+              code.language-scss
+                |// Julien, Josh & Jonas
+                |input[value="j" i] ~ #results #result_1:before,
+                |input[value="j" i] ~ #results #result_2:before,
+                |input[value="j" i] ~ #results #result_3:before {
+                |  display: block;
+                |}
+                |// Josh & Jonas
+                |input[value="jo" i] ~ #results #result_1:before,
+                |input[value="jo" i] ~ #results #result_2:before {
+                |  display: block;
+                |}
+                |// Josh only
+                |input[value="jos" i]  ~ #results #result_2:before,
+                |input[value="josh" i] ~ #results #result_2:before {
+                |  display: block;
+                |}
+
+        .fln.w-50.flc
+          .fln
+            pre.bg-near-black.pa3.lh-copy.tl.f5
+              code.language-scss
+                |// Jonas only
+                |input[value="jon" i]   ~ #results #result_2:before,
+                |input[value="jona" i]  ~ #results #result_2:before,
+                |input[value="jonas" i] ~ #results #result_2:before {
+                |  display: block;
+                |}
+                |// Julien only
+                |input[value="ju" i]     ~ #results #result_0:before,
+                |input[value="jul" i]    ~ #results #result_0:before,
+                |input[value="juli" i]   ~ #results #result_0:before,
+                |input[value="julie" i]  ~ #results #result_0:before,
+                |input[value="julien" i] ~ #results #result_0:before {
+                |  display: block;
+                |}
+
+// Hits
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Styling in one div
     .fla.flrnw.flc
-      .fln.w-60
-        .fake-browser.shadow-3.center.w-80
-          img.w-100(src='./img/layout.png')
       .fln.w-40
-        img(src='./img/dustin.gif')
+        img(src='./img/gianluca.gif')
         pre.bg-near-black.pa2.lh-copy.tl
           code.language-html
             |  &lt;div id="result_42"&gt;&lt;/div&gt;
@@ -15,54 +112,66 @@ section.slide--vertical
 // Cloudinary for the image
 section.slide--vertical
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b www.cloudinary.com
-    .fla.flrnw
-      .fla.flcnw
-        .fla.flcnw.flccv
-          pre.bg-near-black.pa2.lh-copy.tl.fln
-            code.language-scss
-              |#result_42 {
-              |  background-image: url([…cloudinary url…]);
-              |  background-position: 50% 0;
-              |  background-size: 200px;
-              |}
-        .fla.flcnw.flccv
-          .bg-near-black.pa2.lh-copy.tl.near-white.dejavu
-            |http://res.cloudinary.com/{app_id}/image/fetch/
-            .db
-              .di.blue w_220
-              .di ,
-              .di.blue h_220
-              .di ,
-              .di.blue c_scale
-              .di ,
-              .di.blue r_max
-              .di ,
-              .di.blue e_grayscale
-              .di ,
-              .di.blue q_90
-              .di /
-            .db.green
-              |https://www.algolia.com/maxime.png
-          
-      .fln.flc.flcnw.w-third
+    .fln.f1.lh-title.tl.b.flrnw.flrcv
+      img.h3.mr3(src='./img/cloudinary.svg')
+      .di cloudinary.com
+    .fla.flcnw
+      .fla.flrnw.flc
         .fla.f0.flc
-          img.w5(src='./img/gianluca-color.png')
+          img.w6.ba.b--green.bw3(src='./img/gianluca-color.png')
         .fla.f0.flc
-          img.w4(src='./img/gianluca-cloudinary.jpg')
+          img.w5.ba.b--blue.bw3(src='./img/gianluca-cloudinary.jpg')
+      .fla.flcnw.flc
+        .bg-near-black.pa2.lh-copy.tl.near-white.dejavu
+          |http://res.cloudinary.com/{app_id}/image/fetch/
+          .db
+            .di.blue w_220
+            .di ,
+            .di.blue h_220
+            .di ,
+            .di.blue r_max
+            .di ,
+            .di.blue e_grayscale
+            .di ,
+            .di.blue q_90
+            .di /
+          .db.green
+            |https://www.algolia.com/gianluca.png
 
-// Fun-fact hover
+// Multi-line name
 section.slide--vertical
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Hover fun fact
+    .fln.f1.lh-title.tl.b Multi-line content
     .fla.flrnw
       .fla.flc
         pre.bg-near-black.pa2.lh-copy.tl
           code.language-scss
+            |#result_42 {
+            |  &:before {
+            |    content: "Gianluca Bargelli \A Full-Stack Engineer";
+            |    white-space: pre;
+            |  }
+            |  &:first-line {
+            |    font-weight: bold;
+            |  }
+            |}
+      .fln.w-30.flc
+        img(src='./img/gianluca.png')
+
+// Fun-fact hover
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b More details on hover
+    .fla.flrnw
+      .fla.flc
+        pre.bg-near-black.pa3.lh-copy.tl.f4
+          code.language-scss
             |#result_42:after {
-            |  content: "[…fun fact…]";
+            |  content: "[…details…]";
             |  opacity: 0;
             |  position: absolute;
+            |  width: 220px;
+            |  height: 220px;
             |  border-radius: 50%;
             |  background-image: linear-gradient(
             |    140deg,
@@ -74,26 +183,5 @@ section.slide--vertical
             |  opacity: 1;
             |}
       .fln.w-third.flc
-        img(src='./img/dustin.gif')
+        img(src='./img/gianluca.gif')
 
-// Multi-line name
-section.slide--vertical
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b ::before + \A + ::first-line
-    .fla.flrnw
-      .fla.flc
-        pre.bg-near-black.pa2.lh-copy.tl
-          code.language-scss
-            |#result_42 {
-            |  padding-top: 220px;
-            |  &:before {
-            |    content: "Dustin Coates \A Solution Engineer";
-            |    white-space: pre;
-            |  }
-            |  &:first-line {
-            |    font-weight: bold;
-            |    line-height: 2.2rem;
-            |  }
-            |}
-      .fln.w-third.flc
-        img(src='./img/dustin.png')

@@ -1,0 +1,254 @@
+// CSS? Really?
+section.slide--horizontal.slide--theme1
+  .bg-gradient-primary.white.h-100.flcnw.flc
+    .f-subheadline.lh-title.mh6.ph6 CSS? Really?
+
+// No functions in CSS
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b CSS is awesome
+    .fla.flrnw.flc.f2
+      ul.list.tl
+        li
+          span.b.dark-red No
+          | vars
+        li
+          span.b.dark-red No
+          | conditions
+        li
+          span.b.dark-red No
+          | loops
+        li
+          span.b.dark-red No
+          | functions
+        li
+          span.b.dark-red No
+          | regular expressions
+
+// Selectors
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Selectors
+    .fla.flcnw.flc.f2
+      ul.list.tl
+        li.bullet-algolia-blue
+          .code tag
+          .di  , 
+          .code .class
+          .di  or  
+          .code #id
+        li.bullet-royal-blue
+          .code [attribute=foo]
+        li.bullet-shamrock
+          .code hierarchical > tree
+        li.bullet-koromiko
+          .code siblings ~ elements
+
+
+// Three tricks
+section.slide--horizontal.slide--theme1
+  .bg-gradient-primary.white.h-100.flcnw.flc
+    .f-subheadline.lh-title.mh6.ph6 Three tricks
+
+// Attribute selectors
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Trick #1: Attribute selectors
+    .fla.flcnw
+      .fla.flrnw
+        .fln.w-50.flc
+          .fln
+            .f3 HTML
+            pre.bg-near-black.pa4.lh-copy.tl
+              code.language-html
+                |&lt;div foo="bar"&gt;1&lt;/div&gt;
+                |&lt;div foo="baz"&gt;2&lt;/div&gt;
+
+        .fln.w-50.flc
+          .fln
+            .f3 CSS
+            pre.bg-near-black.pa4.lh-copy.tl
+              code.language-scss
+                |div[foo="bar"] {
+                |  background: green;
+                |}
+      .fla.flc
+        .fln.w-50.flrnw.flspah
+          .db.ba.w-25.h3.flc.bg-green 1
+          .db.ba.w-25.h3.flc 2
+
+// Pseudo-elements
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Trick #2: Pseudo-elements
+    .fla.flcnw
+      .fla.flrnw
+        .fln.w-50.flc
+          .fln
+            .f3 HTML
+            pre.bg-near-black.pa4.lh-copy.tl
+              code.language-html
+                |&lt;div&gt;1&lt;/div&gt;
+                |&lt;div id="foo"&gt;2&lt;/div&gt;
+
+        .fln.w-50.flc
+          .fln
+            .f3 CSS
+            pre.bg-near-black.pa4.lh-copy.tl
+              code.language-scss
+                |#foo:before {
+                |  content: "♥ "
+                |}
+      .fla.flc
+        .fln.w-50.flrnw.flspah
+          .db.ba.w-25.h3.flc 1
+          .db.ba.w-25.h3.flc ♥ 2
+
+// Tilde selector
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Trick #3: Tilde selector
+    .fla.flcnw
+      .fla.flrnw
+        .fln.w-50.flc
+          .fln
+            .f3 HTML
+            pre.bg-near-black.pa4.lh-copy.tl
+              code.language-html
+                |&lt;div class="foo"&gt;1&lt;/div&gt;
+                |&lt;div class="bar"&gt;2&lt;/div&gt;
+                |&lt;div class="baz"&gt;3&lt;/div&gt;
+                |&lt;div class="foo"&gt;4&lt;/div&gt;
+
+        .fln.w-50.flc
+          .fln
+            .f3 CSS
+            pre.bg-near-black.pa4.lh-copy.tl
+              code.language-scss
+                |.bar ~ .foo {
+                |  background: green;
+                |}
+      .fla.flc
+        .fln.w-75.flrnw.flspah
+          .db.ba.w-20.h3.flc 1
+          .db.ba.w-20.h3.flc 2
+          .db.ba.w-20.h3.flc 3
+          .db.ba.w-20.h3.flc.bg-green 4
+
+// All at once
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b #1 + #2 + #3
+    .fla.flcnw
+      .fla.flrnw
+        .fln.w-50.flc
+          .fln
+            .f3 HTML
+            pre.bg-near-black.pa4.lh-copy.tl
+              code.language-html
+                |&lt;input type="text" value="Tim" /&gt;
+                |&lt;div id="result"&gt;&lt;/div&gt;
+
+        .fln.w-50.flc
+          .fln
+            .f3 CSS
+            pre.bg-near-black.pa3.lh-copy.tl
+              code.language-scss
+                |input[value="Tim"] ~ #result:before {
+                |  content: "Tim Carry";
+                |}
+      .fla.flc
+        .fln.w-50.flcnw
+          .fln.flrnw.pa2.flspbh
+            input.fln.pa2.br2(type="text" value="Tim")
+            .db.ba.pa3 Tim Carry
+
+// Javascript
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b (Almost) No JavaScript
+    .fla.flcnw
+      .fla.flrnw
+        .fln.w-60.flc
+          .fln
+            pre.bg-near-black.ph3.pt4.lh-copy.tl
+              code.language-html
+                |&lt;input type="text" value=""/&gt;
+                |&lt;div id="result"&gt;&lt;/div&gt;
+            pre.bg-near-black.pa3.lh-copy.tl
+              code.language-scss
+                |input[value="Tim"] ~ #result:before {
+                |  content: "Tim Carry";
+                |}
+        .fln.w-40.flc
+          .fln.flrnw.pa2.flspbh
+            input.fln.pa2.br2(type="text" value="Tim")
+            .db.ba.w3.h3.ml4
+      .fla.flc
+        .fln.flcnw
+            pre.bg-near-black.pa4.lh-copy.tl.fragment
+              code.language-html
+                |&lt;input type="text" oninput="this.setAttribute('value', this.value)" /&gt;
+
+// Full-matches
+section.slide--vertical(data-transition='fade-in')
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b It works!
+    .fla.flcnw
+      .fla.flrnw
+        .fln.w-60.flc
+          .fln
+            pre.bg-near-black.pa3.lh-copy.tl
+              code.language-scss
+                |input[value="tim" i] ~ #result:before {
+                |  content: "Tim Carry";
+                |}
+                |input[value="emily" i] ~ #result:before {
+                |  content: "Emily Hayman";
+                |}
+                |input[value="kumiko" i] ~ #result:before {
+                |  content: "Kumiko Larroque";
+                |}
+        .fln.w-40.flc
+          .fln.flcnw
+            .fln.flrnw.pa2.flspbh
+              input.fln.pa2.br2.w4(type="text" value="tim")
+              .db.ba.ml2.pa3 Tim Carry
+            .fln.flrnw.pa2.flspbh
+              input.fln.pa2.br2.w4(type="text" value="emily")
+              .db.ba.ml2.pa3 Emily Hayman
+            .fln.flrnw.pa2.flspbh
+              input.fln.pa2.br2.w4(type="text" value="kumiko")
+              .db.ba.ml2.pa3 Kumiko Larroque
+
+// No partial matches
+section.slide--vertical(data-transition='fade-in')
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b well... 
+    .fla.flcnw
+      .fla.flrnw
+        .fln.w-60.flc
+          .fln
+            pre.bg-near-black.pa3.lh-copy.tl
+              code.language-scss
+                |input[value="tim" i] ~ #result:before {
+                |  content: "Tim Carry";
+                |}
+                |input[value="emily" i] ~ #result:before {
+                |  content: "Emily Hayman";
+                |}
+                |input[value="kumiko" i] ~ #result:before {
+                |  content: "Kumiko Larroque";
+                |}
+        .fln.w-40.flc
+          .fln.flcnw
+            .fln.flrnw.pa2.flspbh
+              input.fln.pa2.br2.w4(type="text" value="ti")
+              .db.ba.ml2.h3.w3
+            .fln.flrnw.pa2.flspbh
+              input.fln.pa2.br2.w4(type="text" value="emi")
+              .db.ba.ml2.h3.w3
+            .fln.flrnw.pa2.flspbh
+              input.fln.pa2.br2.w4(type="text" value="kumi")
+              .db.ba.ml2.h3.w3
+

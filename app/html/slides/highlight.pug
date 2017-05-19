@@ -1,12 +1,64 @@
+// Without / With highlight
 section.slide--vertical
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Highlight
-    .fla.flcnw.flccv
-      |highlight
-      |peut trouver dans plein de choses
-      |parfois dur de voir pourquoi une personne est affichée
-      |besoin de highlight
-      |montrer l'exemple de google
-      |doit etre visible, mais pas trop
-      |doit permettre de comprendre pourquoi un résultat est là, mais doit voir le
-      |résultat en premier
+    .fln.f1.lh-title.tl.b Explaining results
+    .fla.flcnw
+      .fln.pa2.mt4
+        input.fln.pa1.br2.f2.w-50(type="text", value="st")
+      .fla.relative
+        img.absolute.h-100.absolute-center-horizontal(src='./img/nohighlight-st.png')
+
+// Google highlight
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Highlighting
+    .fla.flcnw.flc
+      .fake-browser.shadow-3.center.w-60.f0
+        img.w-100(src='./img/highlight-google.png')
+
+// Generate content
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Generated content
+    .fla.flcnw.mt4
+      .fln.pa2.mt4
+        input.fln.pa1.br2.f2.w-50(type="text", value="gian")
+      .fla.flrnw
+        .fln.w-30.flc
+          img(src='./img/gianluca.png')
+        .fla.flc
+          pre.bg-near-black.pa2.lh-copy.tl.f3
+            code.language-scss
+              |#result_42:before {
+              |  content: "Gianluca Bargelli \A Full-Stack Engineer";
+              |}
+
+// Multi-line name
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Merge of two fonts
+    .fla.flcnw
+      .fla.flrnw
+        .fln.w-third.flc
+          img(src='./img/highlight-gianluca.png')
+        .fla.flc.flcnw
+          img(src='./img/raleway.png')
+          .db.f1.b.dark-gray +
+          img(src='./img/raleway-bold.png')
+          .bg-black-80.ph2.lh-copy.tl.near-white.dejavu.mt3 U+E000 – U+F8FF
+      .fln.pa2
+        pre.bg-near-black.pa2.lh-copy.tl
+          code.language-scss
+            |#result_42:before {
+            |  content: "\e647 \e669 \e661 \e66e luca Bargelli \A Full-Stack Engineer";
+            |}
+
+// Highlighting for us
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Subtle but useful
+    .fla.flcnw
+      .fln.pa2.mt4
+        input.fln.pa1.br2.f2.w-50(type="text", value="st")
+      .fla.relative
+        img.absolute.h-100.absolute-center-horizontal(src='./img/highlight-st.png')

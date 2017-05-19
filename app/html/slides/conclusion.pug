@@ -1,12 +1,56 @@
+// Learnings
+section.slide--horizontal.slide--theme1
+  .bg-gradient-primary.white.h-100.flcnw.flc
+    .f-subheadline.lh-title.mh6.ph6 Learnings
+
+// Performance
 section.slide--vertical
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Conclusion
+    .fln.f1.lh-title.tl.b Performance tricks
+    .fla.flrw.tl.relative
+      .fln.flcnw.flc.w-50.f2.fragment(data-fragment-index="1")
+        .fln.mb3
+          .code #id
+          .di  is fast
+        .fln
+          .code :nth-child
+          .di  is slow
+
+      .fln.flcnw.flc.w-50.f2.fragment(data-fragment-index="2")
+        .fln.mb3 Reduce filesize with 
+        .fln
+          .code #i
+          .di  or 
+          .code #r12
+
+      .fln.flcnw.flc.w-50.f2.fragment.flc.pa4(data-fragment-index="3")
+        .fln.mb3
+          .di Use 
+          .code #r12[id]
+        .fln
+          .di instead of 
+          .code important!
+
+      .fln.flcnw.flc.w-50.f2.fragment.flc.pa4(data-fragment-index="4")
+        .fln.tc 
+          .di Don't use more than 
+          .code 8192 
+          .di selectors in one rule
+
+    .absolute.bg-black-90.absolute-0.fragment(data-fragment-index="5")
+      .w-100.h-100
+        .flrnw.h-100.w-100.flc
+          .fln.dark-red.f-headline.b.h-50.flc Don't listen to me
+
+
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Answers
     .fla.flcnw.flccv
-      |conclusion
-      |ne l'utilisez pas en production
-      |taille du fichier CSS grossit trop, trop vite
-      |peut pas gérer correctement toutes les typos
-      |permet de comprendre comment le moteur marche
-      |bien plus puissant par l'API
-      |plein de edge case pas gérés par mon implementation
-      |peut pas savoir que impossible tant que pas essayé
+      ul.list
+        li How can a problem so complex as a search engine be solved with a tool as simple as CSS
+        li give the illusion it's working
+        li split it into small parts, do them one by one
+        li you can't know it's impossible until you've tried
+
+

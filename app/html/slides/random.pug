@@ -1,10 +1,7 @@
-section.slide--horizontal.slide--theme1
-  .bg-gradient-primary.white.h-100.flcnw.flc
-    .f-subheadline.lh-title.mh6.ph6 Random display
-
+// Non-random order
 section.slide--vertical
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Random order
+    .fln.f1.lh-title.tl.b Empty query
     .fla.flrnw
       .fla.relative.flc
         .absolute
@@ -13,19 +10,17 @@ section.slide--vertical
         .absolute.top-3.left-3.fragment
           .fake-browser.shadow-3.center
             img.w-100(src='./img/non-random.png')
-        .absolute.top-2.right-2.fragment
-          .fake-browser.shadow-3.center
-            img.w-100(src='./img/non-random.png')
-        .absolute.top-4.right-4.fragment
-          .fake-browser.shadow-3.center
-            img.w-100(src='./img/non-random.png')
         .absolute.top-2.left-4.fragment
           .fake-browser.shadow-3.center
             img.w-100(src='./img/non-random.png')
+        .absolute.top-2.left-4.fragment
+          .fake-browser.shadow-3.center.f0
+            img.w-100(src='./img/random.gif')
 
+// Flex order
 section.slide--vertical
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Flexbox order
+    .fln.f1.lh-title.tl.b Changing the order
     .fla.flcnw
       .fla.flrnw
         .fln.w-50.flc
@@ -33,25 +28,26 @@ section.slide--vertical
             .f3 HTML
             pre.bg-near-black.pa4.lh-copy.tl
               code.language-html
-                |&lt;div class="foo"&gt;foo&lt;/div&gt;
-                |&lt;div class="bar"&gt;bar&lt;/div&gt;
-                |&lt;div class="baz"&gt;baz&lt;/div&gt;
+                |&lt;div id="result_1"&gt;result_1&lt;/div&gt;
+                |&lt;div id="result_2"&gt;result_2&lt;/div&gt;
+                |&lt;div id="result_3"&gt;result_3&lt;/div&gt;
 
         .fln.w-50.flc
           .fln
             .f3 CSS
             pre.bg-near-black.pa4.lh-copy.tl
               code.language-scss
-                |.foo, .bar, .baz { flex: 1; }
-                |.foo { order: 3; }
-                |.bar { order: 1; };
-                |.baz { order: 2; }
+                |div { flex: 1; }
+                |#result_1 { order: 3; }
+                |#result_2 { order: 1; };
+                |#result_3 { order: 2; }
       .fla.flc
         .fln.w-75.flrnw.flspah
-          .db.ba.w-20.h3.flc bar
-          .db.ba.w-20.h3.flc baz
-          .db.ba.w-20.h3.flc foo
+          .db.ba.w-20.h3.flc result_2
+          .db.ba.w-20.h3.flc result_3
+          .db.ba.w-20.h3.flc result_1
 
+// Random in CSS?
 section.slide--vertical
   .h-100.flcnw.pa3
     .fln.f1.lh-title.tl.b Random in CSS?
@@ -64,10 +60,14 @@ section.slide--vertical
           li
             span.b.dark-red No
             | functions
+          li.flrnw.flrcv.fragment
+            .b.dark-red.fln No
+            .fln.bg-black-80.near-white.ml2.mv2.dejavu.f2.ph2 order: random;
       .fla.flc.fragment.flcnw
         .fln.f1.mb3 SCSS? Less? Stylus?
         img.fln(src='./img/xkcd_random.png')
 
+// Webtask.io
 section.slide--vertical
   .h-100.flcnw.pa3
     .fln.f1.lh-title.tl.b.flrnw.flrcv
@@ -97,21 +97,5 @@ section.slide--vertical
           .di .webtask.io/
           .di.blue random-css
       .absolute.top-2.left-4.fragment
-        .fake-browser.shadow-3.center
+        .fake-browser.shadow-3.center.f0
           img.w-100(src='./img/random.gif')
-
-section.slide--vertical
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Random order
-    .fla.flcnw.flccv
-      |random order
-      |on est plus de 100, à chaque fois on voit les même dans le haut de page
-      |pas représentatif de qui ont est, et de notre flat hierarchy
-      |donc affichage random des résultats
-      |cherché longtemps comment faire du random en CSS
-      |peut utiliser order: en flexbox pour choisir l'ordre
-      |un peu triché pour ça
-      |peut le faire en SCSS? mais pas vraiment random (XKCD: random number generator)
-      |CSS généré coté serveur random, qui attribut un order random à chacun
-      |donc ordre différent à chaque load
-      |webtask.io pour ça, super Gist + Heroku par Auth0
