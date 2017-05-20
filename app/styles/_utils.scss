@@ -112,6 +112,7 @@
 .bullet-logan li:before { color: $logan; }
 
 .bg-gradient-primary { background-image: linear-gradient(to top right, $algolia-blue, $royal-blue); }
+.bg-gradient-primary-90 { background-image: linear-gradient(to top right, rgba($algolia-blue, .9), rgba($royal-blue, .9)); }
 .bg-gradient-april-fools { background-image: linear-gradient(to bottom right, $april-fools-purple, $royal-blue); }
 
 // FONTS
@@ -171,6 +172,11 @@
   &:before {
     content: "> ";
   }
+}
+.list-inside { 
+  list-style-position: inside; 
+  text-indent: -1em;
+  padding-left: 1em;
 }
 
 // MARGINS

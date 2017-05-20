@@ -4,7 +4,7 @@ section.slide--horizontal.slide--theme1
     .f-subheadline.lh-title.mh6.ph6 Learnings
 
 // Performance
-section.slide--vertical
+section.slide--horizontal
   .h-100.flcnw.pa3
     .fln.f1.lh-title.tl.b Performance tricks
     .fla.flrw.tl.relative
@@ -29,7 +29,7 @@ section.slide--vertical
           .code #r12[id]
         .fln
           .di instead of 
-          .code important!
+          .code !important
 
       .fln.flcnw.flc.w-50.f2.fragment.flc.pa4(data-fragment-index="4")
         .fln.tc 
@@ -37,20 +37,33 @@ section.slide--vertical
           .code 8192 
           .di selectors in one rule
 
-    .absolute.bg-black-90.absolute-0.fragment(data-fragment-index="5")
+    .absolute.bg-gradient-primary-90.absolute-0.fragment(data-fragment-index="5")
       .w-100.h-100
         .flrnw.h-100.w-100.flc
-          .fln.dark-red.f-headline.b.h-50.flc Don't listen to me
+          .fln.white.f-headline.b.h-50.w-80.flc Don't follow random performance tricks
 
 
-section.slide--vertical
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Answers
-    .fla.flcnw.flccv
-      ul.list
-        li How can a problem so complex as a search engine be solved with a tool as simple as CSS
-        li give the illusion it's working
-        li split it into small parts, do them one by one
-        li you can't know it's impossible until you've tried
+// How to solve a complex problem
+section.slide--horizontal.slide--theme1
+  aside.notes
+    | Start with an illusion. Fake it till you make it. Improve on that.
+    | Split a complex problem into small challenges, and solve them one by one
+    | You'll learn new skills that you'll be able to use
+    | 
+  .bg-gradient-april-fools.white.h-100.flcnw.flc
+    .f-subheadline.lh-title.mh6.ph5
+      | Impossible only means you haven't found the solution 
+      .di.b yet
+      .di .
 
+// CSS? Really?
+section.slide--horizontal.slide--theme1
+  .bg-gradient-primary.white.h-100.flcnw.flc
+    .f-headline
+      .di.c-contact.c-contact--email(data-name='email')
+        |tim@
+        .di.c-contact.c-contact--website(data-name='website')
+          .di.c-contact.c-contact--twitter(data-name='twitter')
+            |pixelastic
+          |.com
 

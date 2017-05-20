@@ -15,21 +15,20 @@ section.slide--vertical
 // Several results
 section.slide--vertical
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Pre-filled results
+    .fln.f1.lh-title.tl.b Several results
     .fla.flcnw
       .fla.flrnw
-        .fln.w-50.flc
+        .fln.w-40.flc
           .fln
             pre.bg-near-black.pa3.lh-copy.tl.f4
               code.language-html
-                |&lt;input type="text" oninput="…"/&gt;
-                |&lt;div id="results"&gt;
-                |  &lt;div id="result_1"&gt;&lt;/div&gt;
-                |  &lt;div id="result_2"&gt;&lt;/div&gt;
-                |  &lt;div id="result_3"&gt;&lt;/div&gt;
-                |&lt;/div&gt;
+                |&lt;input type="text" id="input"/&gt;
+                |
+                |&lt;div id="result_1"&gt;&lt;/div&gt;
+                |&lt;div id="result_2"&gt;&lt;/div&gt;
+                |&lt;div id="result_3"&gt;&lt;/div&gt;
 
-        .fln.w-50.flc
+        .fla.flc
           .fln
             pre.bg-near-black.pa3.lh-copy.tl.f4
               code.language-scss
@@ -40,8 +39,8 @@ section.slide--vertical
                 |// Hide them all
                 |#results div { display: none; }
                 |// Display some on specific queries
-                |input[value="jo" i] ~ #results #result_2:before,
-                |input[value="jo" i] ~ #results #result_3:before {
+                |#input[value="jo" i] ~ #result_2:before,
+                |#input[value="jo" i] ~ #result_3:before {
                 |  display: block;
                 |}
       .fla.flc
@@ -53,50 +52,51 @@ section.slide--vertical
             .db.ba.pa3.ml3.bg-green Jonas Badalic
 
 // Many rules
-section.slide--vertical
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Lots of rules...
-    .fla.flcnw
-      .fla.flrnw
-        .fln.w-50.flc
-          .fln
-            pre.bg-near-black.pa3.lh-copy.tl.f5
-              code.language-scss
-                |// Julien, Josh & Jonas
-                |input[value="j" i] ~ #results #result_1:before,
-                |input[value="j" i] ~ #results #result_2:before,
-                |input[value="j" i] ~ #results #result_3:before {
-                |  display: block;
-                |}
-                |// Josh & Jonas
-                |input[value="jo" i] ~ #results #result_1:before,
-                |input[value="jo" i] ~ #results #result_2:before {
-                |  display: block;
-                |}
-                |// Josh only
-                |input[value="jos" i]  ~ #results #result_2:before,
-                |input[value="josh" i] ~ #results #result_2:before {
-                |  display: block;
-                |}
-
-        .fln.w-50.flc
-          .fln
-            pre.bg-near-black.pa3.lh-copy.tl.f5
-              code.language-scss
-                |// Jonas only
-                |input[value="jon" i]   ~ #results #result_2:before,
-                |input[value="jona" i]  ~ #results #result_2:before,
-                |input[value="jonas" i] ~ #results #result_2:before {
-                |  display: block;
-                |}
-                |// Julien only
-                |input[value="ju" i]     ~ #results #result_0:before,
-                |input[value="jul" i]    ~ #results #result_0:before,
-                |input[value="juli" i]   ~ #results #result_0:before,
-                |input[value="julie" i]  ~ #results #result_0:before,
-                |input[value="julien" i] ~ #results #result_0:before {
-                |  display: block;
-                |}
+// section.slide--vertical
+//   .h-100.flcnw.pa3
+//     .fln.f1.lh-title.tl.b Lots of rules...
+//     .fla.flcnw
+//       .fla.flrnw
+//         .fln.w-50.flc
+//           .fln
+//             pre.bg-near-black.pa3.lh-copy.tl.f4
+//               code.language-scss
+//                 |// Julien, Josh & Jonas
+//                 |#input[value="j" i] ~ #result_1:before,
+//                 |#input[value="j" i] ~ #result_2:before,
+//                 |#input[value="j" i] ~ #result_3:before {
+//                 |  display: block;
+//                 |}
+//                 |// Josh & Jonas
+//                 |#input[value="jo" i] ~ #result_1:before,
+//                 |#input[value="jo" i] ~ #result_2:before {
+//                 |  display: block;
+//                 |}
+//                 |// Josh only
+//                 |#input[value="jos" i]  ~ #result_2:before,
+//                 |#input[value="josh" i] ~ #result_2:before {
+//                 |  display: block;
+//                 |}
+//
+//         .fln.w-50.flc
+//           .fln
+//             pre.bg-near-black.pa3.lh-copy.tl.f4
+//               code.language-scss
+//                 |// Jonas only
+//                 |#input[value="jon" i]   ~ #result_2:before,
+//                 |#input[value="jona" i]  ~ #result_2:before,
+//                 |#input[value="jonas" i] ~ #result_2:before {
+//                 |  display: block;
+//                 |}
+//                 |
+//                 |// Julien only
+//                 |#input[value="ju" i]     ~ #result_0:before,
+//                 |#input[value="jul" i]    ~ #result_0:before,
+//                 |#input[value="juli" i]   ~ #result_0:before,
+//                 |#input[value="julie" i]  ~ #result_0:before,
+//                 |#input[value="julien" i] ~ #result_0:before {
+//                 |  display: block;
+//                 |}
 
 // Hits
 section.slide--vertical
@@ -139,10 +139,28 @@ section.slide--vertical
             |https://www.algolia.com/gianluca.png
 
 // Multi-line name
-section.slide--vertical
+section.slide--vertical(data-transition='fade-in')
   .h-100.flcnw.pa3
     .fln.f1.lh-title.tl.b Multi-line content
     .fla.flrnw
+      .fln.w-30.flc
+        img(src='./img/gianluca.png')
+      .fla.flc
+        pre.bg-near-black.pa2.lh-copy.tl
+          code.language-scss
+            |#result_42 {
+            |  &:before {
+            |    content: "Gianluca Bargelli Full-Stack Engineer";
+            |  }
+            |}
+
+// Multi-line name
+section.slide--vertical(data-transition='fade-in')
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Multi-line content
+    .fla.flrnw
+      .fln.w-30.flc
+        img(src='./img/gianluca.png')
       .fla.flc
         pre.bg-near-black.pa2.lh-copy.tl
           code.language-scss
@@ -155,33 +173,31 @@ section.slide--vertical
             |    font-weight: bold;
             |  }
             |}
-      .fln.w-30.flc
-        img(src='./img/gianluca.png')
 
 // Fun-fact hover
-section.slide--vertical
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b More details on hover
-    .fla.flrnw
-      .fla.flc
-        pre.bg-near-black.pa3.lh-copy.tl.f4
-          code.language-scss
-            |#result_42:after {
-            |  content: "[…details…]";
-            |  opacity: 0;
-            |  position: absolute;
-            |  width: 220px;
-            |  height: 220px;
-            |  border-radius: 50%;
-            |  background-image: linear-gradient(
-            |    140deg,
-            |    rgba(12,105,172,.75) 10%,
-            |    rgba(24,35,89,.75) 90%
-            |  );
-            |}
-            |#result_42:hover:after {
-            |  opacity: 1;
-            |}
-      .fln.w-third.flc
-        img(src='./img/gianluca.gif')
-
+// section.slide--vertical
+//   .h-100.flcnw.pa3
+//     .fln.f1.lh-title.tl.b More details on hover
+//     .fla.flrnw
+//       .fla.flc
+//         pre.bg-near-black.pa3.lh-copy.tl.f4
+//           code.language-scss
+//             |#result_42:after {
+//             |  content: "[…details…]";
+//             |  opacity: 0;
+//             |  position: absolute;
+//             |  width: 220px;
+//             |  height: 220px;
+//             |  border-radius: 50%;
+//             |  background-image: linear-gradient(
+//             |    140deg,
+//             |    rgba(12,105,172,.75) 10%,
+//             |    rgba(24,35,89,.75) 90%
+//             |  );
+//             |}
+//             |#result_42:hover:after {
+//             |  opacity: 1;
+//             |}
+//       .fln.w-third.flc
+//         img(src='./img/gianluca.gif')
+//
