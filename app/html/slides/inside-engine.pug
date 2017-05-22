@@ -23,57 +23,16 @@ section.slide--horizontal
             .di.b Tim Carry
             .di ?
 
-// First name, last name
-section.slide--horizontal
+section.slide--horizontal(data-transition='fade-in')
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Splitting words
+    .fla.flcnw.flc
+      .fln.b.f1 Tim Carry - Developer Advocate
+
+// N-grams
+section.slide--horizontal(data-transition='fade-in')
   .h-100.flcnw.pa3
     .fln.f1.lh-title.tl.b N-grams
-    .fla.flcnw.flc
-      .fln.b.f1 
-        .di.bittersweet Tim
-        .di.shamrock  Carry
-      .fln.flrnw.tl.bg-deep-cove.ph3.f2.fragment
-        .fla.flcnw
-          .w5.bittersweet T
-          .w5.bittersweet Ti
-          .w5.bittersweet Tim
-        .fla.flcnw
-          .w5.shamrock C
-          .w5.shamrock Ca
-          .w5.shamrock Car
-          .w5.shamrock Carr
-          .w5.shamrock Carry
-
-// Prefix matches
-section.slide--horizontal
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Prefix matching
-    .fla.flcnw
-      .fla.flrnw
-        .fln.w-50.flc
-          .fln
-            pre.bg-near-black.pa3.lh-copy.tl
-              code.language-scss
-                |input[value="t" i] ~ #result:after,
-                |input[value="ti" i] ~ #result:after,
-                |input[value="tim" i] ~ #result:after {
-                |  content: "Tim Carry";
-                |}
-        .fln.w-50.flc
-          .fln.flcnw
-            .fln.flrnw.pa2.flspbh
-              input.fln.pa2.br2(type="text" value="t")
-              .db.ba.ml4.pa3 Tim Carry
-            .fln.flrnw.pa2.flspbh
-              input.fln.pa2.br2(type="text" value="ti")
-              .db.ba.ml4.pa3 Tim Carry
-            .fln.flrnw.pa2.flspbh
-              input.fln.pa2.br2(type="text" value="tim")
-              .db.ba.ml4.pa3 Tim Carry
-
-// More n-grams
-section.slide--horizontal
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Moar!
     .fla.flcnw.flc
       .fln.b.f1 
         .di.bittersweet Tim
@@ -110,6 +69,42 @@ section.slide--horizontal
           .w5.mulberry Advoca
           .w5.mulberry Advocat
           .w5.mulberry Advocate
+
+// Prefix matches
+section.slide--horizontal
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Prefix matching
+    .fla.flcnw
+      .fla.flrnw
+        .fln.w-50.flc
+          .fln
+            pre.bg-near-black.pa3.lh-copy.tl
+              code.language-scss
+                |input[value="t" i]     ~ #result:before,
+                |input[value="ti" i]    ~ #result:before,
+                |input[value="tim" i]   ~ #result:before,
+                |input[value="c" i]     ~ #result:before,
+                |input[value="ca" i]    ~ #result:before,
+                |input[value="car" i]   ~ #result:before,
+                |input[value="carr" i]  ~ #result:before,
+                |input[value="carry" i] ~ #result:before {
+                |  content: "Tim Carry";
+                |}
+        .fln.w-50.flc
+          .fln.flcnw
+            .fln.flrnw.pa2.flspbh
+              input.fln.pa2.br2(type="text" value="t")
+              .db.ba.ml4.pa3 Tim Carry
+            .fln.flrnw.pa2.flspbh
+              input.fln.pa2.br2(type="text" value="ti")
+              .db.ba.ml4.pa3 Tim Carry
+            .fln.flrnw.pa2.flspbh
+              input.fln.pa2.br2(type="text" value="c")
+              .db.ba.ml4.pa3 Tim Carry
+            .fln.flrnw.pa2.flspbh
+              input.fln.pa2.br2(type="text" value="car")
+              .db.ba.ml4.pa3 Tim Carry
+
 
 // Edge-cases and features
 section.slide--horizontal

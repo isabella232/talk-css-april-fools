@@ -74,8 +74,8 @@ section.slide--vertical
                 |}
       .fla.flc
         .fln.w-50.flrnw.flspah
-          .db.ba.w-25.h3.flc.bg-green 1
-          .db.ba.w-25.h3.flc 2
+          .db.ba.w-25.h3.flc.bg-green foo="bar"
+          .db.ba.w-25.h3.flc foo="baz"
 
 // Pseudo-elements
 section.slide--vertical
@@ -130,10 +130,10 @@ section.slide--vertical
                 |}
       .fla.flc
         .fln.w-75.flrnw.flspah
-          .db.ba.w-20.h3.flc foo
-          .db.ba.w-20.h3.flc bar
-          .db.ba.w-20.h3.flc baz
-          .db.ba.w-20.h3.flc.bg-green foo
+          .db.ba.w-20.h3.flc .foo
+          .db.ba.w-20.h3.flc .bar
+          .db.ba.w-20.h3.flc .baz
+          .db.ba.w-20.h3.flc.bg-green .foo
 
 // All at once
 section.slide--vertical
@@ -169,7 +169,7 @@ section.slide--vertical
 // Javascript
 section.slide--vertical
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b (Almost) No JavaScript
+    .fln.f1.lh-title.tl.b Search as-you-type
     .fla.flcnw
       .fla.flrnw
         .fln.w-60.flc
@@ -183,7 +183,10 @@ section.slide--vertical
                 |input[value="Tim"] ~ #result:before {
                 |  content: "Tim Carry";
                 |}
-        .fln.w-40.flc
+        .fln.w-40.flc.flcnw
+          .fln.flrnw.pa2.flspbh
+            input.fln.pa2.br2(type="text" value="")
+            .db.ba.w3.h3.ml4
           .fln.flrnw.pa2.flspbh
             input.fln.pa2.br2(type="text" value="Tim")
             .db.ba.w3.h3.ml4
