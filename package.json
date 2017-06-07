@@ -10,7 +10,8 @@
     "serve": "./scripts/serve",
     "build": "./scripts/build",
     "build:html": "./scripts/build-html",
-    "postinstall": "./scripts/postinstall"
+    "postinstall": "./scripts/postinstall",
+    "deploy": "./scripts/deploy"
   },
   "devDependencies": {
     "auto-reload-brunch": "^2",
