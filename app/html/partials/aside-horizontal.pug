@@ -6,4 +6,6 @@
       a.link.fw4.f4.white.algolia-blue--theme1.underline(href='https://www.algolia.com/css') www.algolia.com/css
     .fln.flcnw.flccv
       .fw4= talk_title
-      .fw3= talk_author_name
+      .fw3
+        .di= talk_author_name
+        a.fw3.no-underline.ml2.white.bunting--theme1(href=`https://twitter.com/${talk_author_name}`)= `@${talk_author_twitter}`

@@ -1,5 +1,5 @@
 {
-  "talk_title": "How To Build A Search Engine In Pure CSS",
+  "talk_title": "A Search Engine In Pure CSS",
   "talk_description": "How can a language like CSS be used to build a search engine? First, we need to understand how a search engine works. By splitting it into a sum of smaller problems, we’ll solve them one by one in CSS. Come and see how pseudo-elements, custom fonts or flexbox can be used in ways you never imagined.",
   "talk_author_name": "Tim Carry",
   "talk_author_twitter": "pixelastic",

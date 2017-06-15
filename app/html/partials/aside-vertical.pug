@@ -3,5 +3,6 @@
     img.h2(src="./ui/algolia-logo-dark-bg.svg")
   .fla.bg-gradient-primary.flcnw.f6.white.ph2.pv3
     a.link.fw4.white.fla.f5(href='https://www.algolia.com/css') www.algolia.com/css
-    .fw4.mta= talk_title
+    .fw4.mta.ph1= talk_title
     .fw3= talk_author_name
+    a.fw3.white.no-underline(href=`https://twitter.com/${talk_author_name}`)= `@${talk_author_twitter}`
