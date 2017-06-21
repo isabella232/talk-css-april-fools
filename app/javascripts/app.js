@@ -2,11 +2,11 @@ let Talk = {
   $slides: null,
   init() {
     Reveal.initialize({
-      width: "100%",
-      height: "100%",
+      width: 1368,
+      height: 768,
       margin: 0,
-      minScale: 1,
-      maxScale:1,
+      minScale: .8,
+      maxScale: 2,
 
       controls: false,
       progress: true,
