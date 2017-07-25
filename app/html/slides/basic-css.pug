@@ -44,6 +44,21 @@ section.slide--vertical
         li.bullet-koromiko
           .code siblings ~ elements
 
+// Definition
+section.slide--horizontal
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b CSS Strength
+    .fla.flcnw.f-subheadline.flc
+      .db
+        // pSelecting only relevant items from a large pool of choices? (
+        .di Selecting only 
+        .di.b.green relevant 
+        .di items
+      .db 
+        .di from a 
+        .di.b.red large pool 
+        .di of choices
+
 
 // Three tricks
 section.slide--horizontal.slide--theme1
@@ -169,7 +184,7 @@ section.slide--vertical
 // Javascript
 section.slide--vertical
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Search as-you-type
+    .fln.f1.lh-title.tl.b Dynamic update
     .fla.flcnw
       .fla.flrnw
         .fln.w-60.flc
@@ -190,11 +205,12 @@ section.slide--vertical
           .fln.flrnw.pa2.flspbh
             input.fln.pa2.br2(type="text" value="Tim")
             .db.ba.w3.h3.ml4
-      .fla.flc
+      .fla.flc.fragments
+        img.absolute.bottom-1.right-1.h4(src='./img/troll.png')
         .fln.flcnw
-            pre.bg-near-black.pa4.lh-copy.tl.fragment
-              code.language-html
-                |&lt;input type="text" oninput="this.setAttribute('value', this.value)" /&gt;
+          pre.bg-near-black.pa4.lh-copy.tl
+            code.language-html
+              |&lt;input type="text" oninput="this.setAttribute('value', this.value)" /&gt;
 
 // Full-matches
 section.slide--vertical(data-transition='fade-in')

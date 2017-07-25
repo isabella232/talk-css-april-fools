@@ -17,7 +17,10 @@ let config = {
     babel: {
       presets: ['env']
     }
-  }
+  },
+  server: {
+    port: 3321,
+  },
 }
 
 module.exports = config

@@ -24,9 +24,11 @@ section.slide--vertical
               code.language-html
                 |&lt;input type="text" id="input"/&gt;
                 |
-                |&lt;div id="result_1"&gt;&lt;/div&gt;
-                |&lt;div id="result_2"&gt;&lt;/div&gt;
-                |&lt;div id="result_3"&gt;&lt;/div&gt;
+                |&lt;div id="results"&gt;
+                |  &lt;div id="result_1"&gt;&lt;/div&gt;
+                |  &lt;div id="result_2"&gt;&lt;/div&gt;
+                |  &lt;div id="result_3"&gt;&lt;/div&gt;
+                |&lt;/div&gt;
 
         .fla.flc
           .fln
@@ -40,8 +42,8 @@ section.slide--vertical
                 |#results div { display: none; }
                 |
                 |// Display some on specific queries
-                |#input[value="jo" i] ~ #result_2,
-                |#input[value="jo" i] ~ #result_3 {
+                |#input[value="jo" i] ~ #results #result_2,
+                |#input[value="jo" i] ~ #results #result_3 {
                 |  display: block;
                 |}
       .fla.flc
