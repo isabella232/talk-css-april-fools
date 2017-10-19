@@ -62,3 +62,45 @@ section.slide--vertical
         input.fln.pa1.br2.f2.w-50(type="text", value="st")
       .fla.relative
         img.absolute.h-100.absolute-center-horizontal(src='./img/highlight-st.png')
+
+// Flex order
+section.slide--vertical
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Ordering results
+    .fla.flcnw
+      .fla.flrnw
+        .fln.w-40.flc
+          .fln
+            pre.bg-near-black.pa3.lh-copy.tl.f4
+              code.language-html
+                |&lt;input type="text" id="input"/&gt;
+                |
+                |&lt;div id="results"&gt;
+                |  &lt;div id="result_1"&gt;&lt;/div&gt;
+                |  &lt;div id="result_2"&gt;&lt;/div&gt;
+                |  […]
+                |  &lt;div id="result_98"&gt;&lt;/div&gt;
+                |  &lt;div id="result_99"&gt;&lt;/div&gt;
+                |&lt;/div&gt;
+
+        .fla.flc
+          .fln
+            pre.bg-near-black.pa3.lh-copy.tl
+              code.language-scss
+                |// Set a flex context
+                |#results div { flex: 1; }
+                |// Change order on specific queries
+                |#input[value="st" i] ~ #result_4 {
+                |  order: 1;
+                |}
+                |#input[value="st" i] ~ #result_8 {
+                |  order: 2;
+                |}
+                |#input[value="st" i] ~ #result_15 {
+                |  order: 3;
+                |}
+      .fla.flc
+        .fln.w-75.flrnw.flspah
+          .db.ba.w-20.h3.flc #result_4
+          .db.ba.w-20.h3.flc #result_8
+          .db.ba.w-20.h3.flc #result_15

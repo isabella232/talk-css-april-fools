@@ -27,7 +27,9 @@ section.slide--vertical
                 |&lt;div id="results"&gt;
                 |  &lt;div id="result_1"&gt;&lt;/div&gt;
                 |  &lt;div id="result_2"&gt;&lt;/div&gt;
-                |  &lt;div id="result_3"&gt;&lt;/div&gt;
+                |  […]
+                |  &lt;div id="result_98"&gt;&lt;/div&gt;
+                |  &lt;div id="result_99"&gt;&lt;/div&gt;
                 |&lt;/div&gt;
 
         .fla.flc
@@ -35,9 +37,10 @@ section.slide--vertical
             pre.bg-near-black.pa3.lh-copy.tl.f4
               code.language-scss
                 |//Pre-fill results
-                |#result_1:before { content: "Julien Lemoine"; }
+                |#result_1:before { content: "Jason Harris"; }
                 |#result_2:before { content: "Josh Dzielak"; }
                 |#result_3:before { content: "Jonas Badalic"; }
+                |// […]
                 |// Hide them all
                 |#results div { display: none; }
                 |
@@ -50,7 +53,7 @@ section.slide--vertical
         .fln.flcnw
           .fln.flrnw.pa2.flspbh
             input.fln.pa2.br2(type="text" value="jo")
-            .db.ba.pa3.ml3.o-30 Julien Lemoine
+            .db.ba.pa3.ml3.o-50 Jason Harris
             .db.ba.pa3.ml3.bg-green Josh Dzielak
             .db.ba.pa3.ml3.bg-green Jonas Badalic
 

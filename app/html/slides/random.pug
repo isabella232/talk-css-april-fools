@@ -4,70 +4,48 @@ section.slide--vertical
     .fln.f1.lh-title.tl.b Empty query
     .fla.flrnw
       .fla.relative.flc
-        .absolute
+        .absolute.f0
+          .fake-browser.shadow-3.center.mw-75
+            .bg-white 
+              input.pa1.br2.f2.w-50.mv2(type="text")
+              img.w-100(src='./img/non-random.png')
+        .absolute.top-3.left-3.fragment.f0.mw-75
           .fake-browser.shadow-3.center
-            img.w-100(src='./img/non-random.png')
-        .absolute.top-3.left-3.fragment
+            .bg-white 
+              input.pa1.br2.f2.w-50.mv2(type="text")
+              img.w-100(src='./img/non-random.png')
+        .absolute.top-2.left-4.fragment.f0.mw-75
           .fake-browser.shadow-3.center
-            img.w-100(src='./img/non-random.png')
-        .absolute.top-2.left-4.fragment
+            .bg-white 
+              input.pa1.br2.f2.w-50.mv2(type="text")
+              img.w-100(src='./img/non-random.png')
+        .absolute.top-3.left-5.fragment.f0.mw-75
           .fake-browser.shadow-3.center
-            img.w-100(src='./img/non-random.png')
-        .absolute.top-2.left-4.fragment
-          .fake-browser.shadow-3.center.f0
-            img.w-100(src='./img/random.gif')
+            .bg-white 
+              input.pa1.br2.f2.w-50.mv2(type="text")
+              img.w-100(src='./img/non-random.png')
 
-// Flex order
-section.slide--vertical
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Changing the order
-    .fla.flcnw
-      .fla.flrnw
-        .fln.w-50.flc
-          .fln
-            .f3 HTML
-            pre.bg-near-black.pa4.lh-copy.tl
-              code.language-html
-                |&lt;div id="result_1"&gt;&lt;/div&gt;
-                |&lt;div id="result_2"&gt;&lt;/div&gt;
-                |&lt;div id="result_3"&gt;&lt;/div&gt;
-
-
-        .fla.flc
-          .fln
-            .f3 CSS
-            pre.bg-near-black.pa4.lh-copy.tl
-              code.language-scss
-                |div { flex: 1; }
-                |#result_1 { order: 3; }
-                |#result_2 { order: 1; }
-                |#result_3 { order: 2; }
-      .fla.flc
-        .fln.w-75.flrnw.flspah
-          .db.ba.w-20.h3.flc #result_2
-          .db.ba.w-20.h3.flc #result_3
-          .db.ba.w-20.h3.flc #result_1
 
 // Random in CSS?
-section.slide--vertical
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Random in CSS?
-    .fla.flrnw
-      .fla.flc
-        .flcnw.f1.tl.h-50.flcspa
-          .bullet-radical-red
-            span.b.dark-red No
-            | vars
-          .bullet-radical-red
-              span.b.dark-red No
-              | functions
-          .flrnw.flrcv.fragment
-            .bullet-radical-red
-              .b.di.dark-red.fln No
-            .fln.bg-black-80.near-white.ml2.mv2.dejavu.f2.ph2 order: random;
-      .fla.flc.fragment.flcnw
-        .fln.f1.mb3 SCSS? Less? Stylus?
-        img.fln(src='./img/xkcd_random.png')
+// section.slide--vertical
+//   .h-100.flcnw.pa3
+//     .fln.f1.lh-title.tl.b Random in CSS?
+//     .fla.flrnw
+//       .fla.flc
+//         .flcnw.f1.tl.h-50.flcspa
+//           .bullet-radical-red
+//             span.b.dark-red No
+//             | vars
+//           .bullet-radical-red
+//               span.b.dark-red No
+//               | functions
+//           .flrnw.flrcv.fragment
+//             .bullet-radical-red
+//               .b.di.dark-red.fln No
+//             .fln.bg-black-80.near-white.ml2.mv2.dejavu.f2.ph2 order: random;
+//       .fla.flc.fragment.flcnw
+//         .fln.f1.mb3 SCSS? Less? Stylus?
+//         img.fln(src='./img/xkcd_random.png')
 
 // Webtask.io
 section.slide--vertical
