@@ -20,7 +20,7 @@
     "brunch": "^2.10.9",
     "clean-css-brunch": "^2",
     "onchange": "^3.2.1",
-    "parallelshell": "^2.0.0",
+    "parallelshell": "^3.0.2",
     "pug-cli": "^1.0.0-alpha6",
     "sass-brunch": "^2.10.4",
     "tachyons": "^4.7.0",
