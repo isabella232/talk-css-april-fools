@@ -1,0 +1,19 @@
+.unbranded {
+  // Removing the horizontal and vertical branding. There is no more
+  // vertical/horizontal slides with the unbranded version.
+  .slide--horizontal {
+    bottom: 0;
+  }
+  .aside--horizontal {
+    display: none;
+  }
+  .slide--vertical {
+    left: 0;
+  }
+  .aside--vertical {
+    display: none;
+  }
+
+  // Make the progress indicator more visible
+  ~ .progress span { background-color: $titan-white; }
+}

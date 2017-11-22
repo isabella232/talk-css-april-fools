@@ -1,22 +1,321 @@
 doctype html
 html(lang="en")
   include ./partials/header
-  body
+body
     .reveal
-      .slides.bg-white.lh-copy.bunting.f3.fw3
+      .slides.unbranded.bg-gradient-primary.lh-copy.white.f3.fw3
 
-        include ./slides/intro
-        include ./slides/april-fools
+        // Title
+        section.slide--horizontal.slide--theme1
+          .bg-gradient-april-fools.white.h-100.flcnw.flc
+            .f-subheadline.lh-title.mh6.ph6 Hacking CSS into a Search Engine
+            // Tim Carry, dev advocate at Algolia. Twitter
 
-        include ./slides/basic-css
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b Hacking:
+            .fla.flcnw.f-subheadline.flc
+              .db
+                .di Overcoming 
+                .di.b limitations
+              .db
+                .di of a 
+                .di.b system 
+                .di to
+              .db 
+                .di achieve 
+                .di.b new 
+                .di outcomes.
+            aside.notes
+              p Using CSS to make it do something it was not meant to be doing.
+              p Not about finding vulnerabilities, but 
+              p using CSS for what it was not meant to be
+              p CSS is much more than a styling language
 
-        include ./slides/inside-engine
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b Search engine
+            .fla.flcnw
+              .fla.flrnw
+                .fln.w-25.flc keywords =>
+                .fla.flc 
+                  img(src="./img/input-output.png")
+                .fln.w-25.flc => results
+              .fln.flrnw.h4.flc.b.f1.fragment
+                .fln.w-third Relevant
+                .fln.w-third Fast
+                .fln.w-third Easy to use
+            aside.notes
+              p A search engine, in its most basic forms takes keywords as input and gives you results as output
+              p A great search engine also is Relevant, Fast and Easy to use
+              p - Relevant because I want matching results (ie. it works)
+              p - Fast because I want the processing to be done quickly
+              p - Easy to use, want it to look like a real thing, not a CSS hack
 
-        include ./slides/layout
-        include ./slides/highlight
-        include ./slides/random
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b Game rules
+            .fla.flcnw.flc
+              .fln.flrnw.w-60.br4.f2
+                .fla.bg-white.br3.br--left.ph1.blue CSS
+                .fln.bg-orange.ph2 HTML
+                .fln.bg-yellow.br3.br--right.pl1.cst-constraint-js
+            aside.notes
+              p Those are limitations of my system, that I put upon myself
+              p Those are the "game rules" I'll follow
 
-        include ./slides/conclusion
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fla.flcnw.flc.f-headline
+              a.link.white.underline-hover(href="https://community.algolia.com/algoliasearch-client-css/demo/" target="_blank") Live demo
+            aside.notes
+              p Enough talking about the hack, let's show it in action
+              p This is the time for the live demo
+              p The dangerous time where everything can fail
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b Limited support for:
+            .fla.h-100.flc
+              .fln.h-80.w-50.flcnw.tl.flcspa.f1
+                .fln Variables
+                .fln Conditions
+                .fln Loops
+                .fln Functions
+                .fln Regular expressions
+            aside.notes
+              p 
+                | Surely, to build a search engine, I will need support for basic constructs like variables, functions, conditions, loops,
+                | regex.
+              p CSS has some support for that but it's not the level we're used to in other languages
+              p don't get me wrong, I love CSS and it's awesome to see variables and functions in the language
+              p but here it is still the constraints of my system
+              p the goal of the hack will be to overcome those limitations
+              p instead of focusing on what CSS cannot do very well, we'll focus on what it is very good at
+              
+        section.slide--horizontal.slide--theme1
+          .bg-gradient-april-fools.white.h-100.flcnw.flc
+            .f-headline.lh-title.mh6.ph6 Selectors
+          aside.notes 
+            p In CSS you can select elements by tag name, class, ids
+            p by a specific attribute value, by its position in the hierarchy compared to its ancestors or sibling
+            p and you can combine all of this
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b CSS main strength
+            .fla.flcnw.f-subheadline.flc
+              .db
+                .di Selecting only 
+                .di.b.green relevant 
+                .di items
+              .db 
+                .di from a 
+                .di.b.red large pool 
+                .di of choices
+            aside.notes 
+              p You can have the most complex and unsemantic HTML structure, you'll still be able to select exactly the one you care about
+              p CSS is really good at that
+              p and when you think about this definition, it's pretty close to what you would expect a search engine to do
+              p you might have a large pools of potential results, you are only interested in the one that are relevant to your keywords
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b Basic principles
+            .fla.flcnw.h-100
+              .fln.h-60.flrnw
+                .fln.w-50.flc
+                  pre.bg-near-black.pa4.lh-copy.tl
+                    code.language-html
+                      |&lt;input type="text" value="tim" /&gt;
+                      |&lt;div id="result"&gt;&lt;/div&gt;
+              .fln.h-40.flc
+                .fln.w-80.flrnw.flc
+                  .fln.w-50
+                    input.fln.pa2.br2.f2.w-50.bunting(type="text" value="tim")
+                  .fln.w-50
+                    .db.ba.pa2.bg-near-white.o-40.f2.bunting #result
+            aside.notes
+              // | HTML: input + div
+              // | CSS: evolves over time
+              // | Rendering: evolves with the CSS, something is targetted
+              p 
+
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b Several elements
+            .fla.flcnw
+              | Changing markup a bit
+              | Default CSS hides everything, show everything when empty
+              | Adding markup for each input, show one more
+            aside.notes
+              p 
+
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b Does not work
+            .fla.flcnw
+              | CSS is only applied to what is in the markup
+              | updating the value won't update the markup, so no render
+              | Javascript is able to read it
+              | Show an HTML code + the resulting input
+              | show that dynamic value is updated, but static value stays the same
+            aside.notes
+              p 
+
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b Adding event handler
+            .fla.flcnw
+              | Adding the onchange handler
+              | update value attribute directly
+              | show that values are updates, and CSS is applied
+            aside.notes
+              p 
+
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b Prefix match
+            .fla.flcnw
+              | search for alexander, alexandre, alexandria, etc
+              | would be better if matches directly from alex, or even from a or al
+            aside.notes
+              p 
+
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b Other side of the mirror
+            .fla.flcnw
+              | Two sides: indexing and searching
+              | searching is when you're a user: what results will i get with this keyword
+              | indexing is when building: what are the srings that will yield this results
+            aside.notes
+              p 
+
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b N-grams
+            .fla.flcnw
+              | Build the sequence of ngrams that will find all alex
+              | do a table with what lead to alexander, alexandre and what n-gram yield to waht
+            aside.notes
+              p 
+
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b N-grams in CSS
+            .fla.flcnw
+              | Same table, but with CSS rules, what is matching what
+            aside.notes
+              p 
+
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b Edge-cases
+            .fla.flcnw
+              | Search engine is full of edgecases, and you fix them by adding more n-grams
+              | accents
+              | synonyms
+              | typo tolerance
+            aside.notes
+              p 
+
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b Ordering queries
+            .fla.flcnw
+              | several matches
+              | relevance is ordering them
+              | match in first name better than last name
+              | exact match better than partial one
+              | fixed order in markup, but need to reorder
+            aside.notes
+              p 
+
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b CSS order
+            .fla.flcnw
+              | all flexbox, so can use `order` to change their order
+              | CSS example based on what is typed, will display one or another
+            aside.notes
+              p 
+
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b Highlight
+            .fla.flcnw
+              | Might have the best sorting algorithm, if user does not get it, useless
+              | users must understand why results are here, otherwise will think your search is broken
+              | subtel way of doing it is hihglight
+              | not bright yellow one, bold is enough
+            aside.notes
+              p 
+
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b Highlight in CSS
+            .fla.flcnw
+              | Using CSS pseudo-selectors
+              | can't use HTML inside, can't inception style styles
+              | use custom font: normal + bold, in private use area
+            aside.notes
+              p 
+
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b Custom font matching
+            .fla.flcnw
+              | several matches based on what is typed, change the display
+              | lots and lots of rules
+            aside.notes
+              p 
+
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b Sum up
+            .fla.flcnw
+              | it's fast, relevant and easy to use. mission accomplished
+              | minimal HTML (all empty divs)
+              | minimal JS (one liner)
+              | CSS all the things (15MB of minimized CSS...)
+            aside.notes
+              p 
+
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b Don't use it
+            .fla.flcnw
+              | Do not use it in production
+              | It's a POC, not production ready
+              | Exercise to see if possible, and to learn
+            aside.notes
+              p 
+
+
+        section.slide--horizontal
+          .h-100.flcnw.pa3
+            .fln.f1.lh-title.tl.b Conclusion
+            .fla.flcnw
+              | Impossible only means you haven't found the solution yet
+              | Hack things. Do something different with it. Helps understand strengths and weaknesses
+            aside.notes
+              p 
 
 
         include ./partials/aside-horizontal
