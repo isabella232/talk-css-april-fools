@@ -3437,9 +3437,9 @@ supports-color@^3.1.2:
   dependencies:
     has-flag "^1.0.0"
 
-tachyons@^4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/tachyons/-/tachyons-4.7.0.tgz#228eed0badca01cf793ef7cc6103a60c8f8b0f3e"
+tachyons-algolia@^0.3.12:
+  version "0.3.12"
+  resolved "https://registry.yarnpkg.com/tachyons-algolia/-/tachyons-algolia-0.3.12.tgz#4164718f43a0a159755a2365117a010e9389ab8c"
 
 tag-shell@~0.1.0:
   version "0.1.0"

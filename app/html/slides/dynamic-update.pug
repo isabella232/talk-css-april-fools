@@ -1,0 +1,102 @@
+section.slide--horizontal
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b First page load
+    .fla.flcnw.h-100
+      .fln.h-third.flc
+        .fln.w-80.flrnw.flc
+          .fln.w-50
+            input.fln.pa2.br2.f1.w-80.bunting(type="text" value="")
+          .fln.w-50.flc
+            .db.ba.pa2.w-50.bg-ghost-80.f1.transparent #result
+      .fln.h-third.flc
+        pre.bg-near-black.pa4.lh-copy.tl.f3
+          code.language-html
+            |&lt;input type="text" value="" /&gt;
+            |&lt;div id="result"&gt;&lt;/div&gt;
+      .fln.h-third.flc
+        pre.bg-near-black.pa4.lh-copy.tl.f3
+          code.language-scss
+            |input[value="tim"] ~ #result:before {
+            |  content: "Tim Carry";
+            |}
+    aside.notes
+      p On first page load, the input is empty
+      p but even if you type something inside, it's not picked up by CSS
+      p that's because CSS rules are only applied to what is available in the markup
+      p from CSS POV, the markup is still an empty value
+      p what you type is a dynamic value that can be read by JS though
+      p so I'll need to add a bit of JS to copy this value to the actual attribute
+
+section.slide--horizontal
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b 
+      .di Adding an 
+      .code oninput
+      .di  handler
+    .fla.flcnw.h-100
+      .fln.h-third.flc
+        .fln.w-80.flrnw.flc
+          .fln.w-50
+            input#demo-dynamic-value-input.fln.pa2.br2.f1.w-80.bunting(type="text" value="")
+          .fln.w-50.flc
+            #demo-dynamic-value-nomatch.db.ba.pa2.w-50.bg-ghost-80.f1.transparent #result
+            #demo-dynamic-value-match.dn.ba.pa2.w-50.bg-white.bunting.f1 Tim Carry
+      .fln.h-third.flc
+        pre.bg-near-black.pa4.lh-copy.tl.f3.language-html
+          .db
+            span.token.tag
+              span.token.tag
+                span.token.punctuation <
+                | input 
+              span.token.attr-name type
+              span.token.attr-value
+                span.token.punctuation =
+                span.token.punctuation "
+                | text
+                span.token.punctuation " 
+              span.token.attr-name value
+              span.token.attr-value
+                span.token.punctuation =
+                span#demo-dynamic-value-value.token.punctuation ""
+          .db
+            span.token.attr-name   oninput
+            span.token.attr-value
+              span.token.punctuation =
+              span.token.punctuation "
+              | this.setAttribute(
+              span.token.punctuation '
+              | value
+              span.token.punctuation '
+              | , this.value)
+              span.token.punctuation "
+          .db
+            span.token.punctuation />
+          .db
+          span.token.tag
+            span.token.tag
+              span.token.punctuation <
+              | div 
+            span.token.attr-name id
+            span.token.attr-value
+              span.token.punctuation =
+              span.token.punctuation "
+              | result
+              span.token.punctuation "
+            span.token.punctuation >
+          span.token.tag
+            span.token.tag
+              span.token.punctuation &lt;/div
+            span.token.punctuation >
+      .fln.h-third.flc
+        pre.bg-near-black.pa4.lh-copy.tl.f3
+          code.language-scss
+            |input[value="tim"] ~ #result:before {
+            |  content: "Tim Carry";
+            |}
+    aside.notes
+      p On first page load, the input is empty
+      p but even if you type something inside, it's not picked up by CSS
+      p that's because CSS rules are only applied to what is available in the markup
+      p from CSS POV, the markup is still an empty value
+      p what you type is a dynamic value that can be read by JS though
+      p so I'll need to add a bit of JS to copy this value to the actual attribute

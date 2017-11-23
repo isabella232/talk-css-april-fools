@@ -1,0 +1,70 @@
+section.slide--horizontal
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Basic principles
+    .fla.flcnw.h-100
+      .fln.h-50.flc
+        .fln.w-80.flrnw.flc
+          .fln.w-50
+            input.fln.pa2.br2.f1.w-80.bunting(type="text" value="tim")
+          .fln.w-50.flc
+            .db.ba.pa2.w-50.bg-ghost-80.f1.transparent #result
+      .fln.h-50.flc
+        pre.bg-near-black.pa4.lh-copy.tl.f1
+          code.language-html
+            |&lt;input type="text" value="tim" /&gt;
+            |&lt;div id="result"&gt;&lt;/div&gt;
+
+section.slide--horizontal(data-transition="none")
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Basic principles
+    .fla.flcnw.h-100
+      .fln.h-50.flc
+        .fln.w-80.flrnw.flc
+          .fln.w-50
+            input.fln.pa2.br2.f1.w-80.bunting.bg-shamrock(type="text" value="tim")
+          .fln.w-50.flc
+            .db.ba.pa2.w-50.bg-ghost-80.f1.transparent #result
+      .fln.h-50.flc
+        pre.bg-near-black.pa4.lh-copy.tl.f1
+          code.language-scss
+            |input[value="tim"] {
+            |  background: green;
+            |}
+
+section.slide--horizontal(data-transition="none")
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Basic principles
+    .fla.flcnw.h-100
+      .fln.h-50.flc
+        .fln.w-80.flrnw.flc
+          .fln.w-50
+            input.fln.pa2.br2.f1.w-80.bunting(type="text" value="tim")
+          .fln.w-50.flc
+            .db.ba.pa2.w-50.bg-shamrock.f1.bunting.transparent #result
+      .fln.h-50.flc
+        pre.bg-near-black.pa4.lh-copy.tl.f1
+          code.language-scss
+            |input[value="tim"] ~ #result {
+            |  background: green;
+            |}
+
+section.slide--horizontal(data-transition="none")
+  .h-100.flcnw.pa3
+    .fln.f1.lh-title.tl.b Basic principles
+    .fla.flcnw.h-100
+      .fln.h-50.flc
+        .fln.w-80.flrnw.flc
+          .fln.w-50
+            input.fln.pa2.br2.f1.w-80.bunting(type="text" value="tim")
+          .fln.w-50.flc
+            .db.ba.pa2.w-50.bg-white.f1.bunting.transparent Tim Carry
+      .fln.h-50.flc
+        pre.bg-near-black.pa4.lh-copy.tl.f1
+          code.language-scss
+            |input[value="tim"] ~ #result:before {
+            |  content: "Tim Carry";
+            |}
+  aside.notes
+    p That's the basic principle. Based on the value of an input, we can
+    p change the styling and content of a totally unrelated element
+    p It's very good, except that it does not work

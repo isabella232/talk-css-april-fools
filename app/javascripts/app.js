@@ -35,6 +35,8 @@ let Talk = {
     $(window).on('resize', _.throttle(() => {
       Talk.forceFullScreen('section.present');
     }, 500));
+
+    Talk.customScripts();
   },
   onSlideChange(event) {
     Talk.setGlobalStateClasses();
@@ -65,5 +67,60 @@ let Talk = {
     );
     Talk.$slides.attr('class', newStateClasses.join(' '));
   },
+  customScripts() {
+    Talk.demoDynamicValue();
+    Talk.demoSeveralResults();
+    Talk.demoAlex();
+  },
+  // Simulate the typing of the correct value in the input
+  demoDynamicValue() {
+    let input = $('#demo-dynamic-value-input');
+    let valueNode = $('#demo-dynamic-value-value');
+    let nomatch = $('#demo-dynamic-value-nomatch');
+    let match = $('#demo-dynamic-value-match');
+
+    input.on('input', (event) => {
+      let value = $(event.target).val();
+      valueNode.html(`"${value}"`)
+      if (value=="tim") {
+        nomatch.hide();
+        match.show();
+      } else {
+        nomatch.show();
+        match.hide();
+      }
+    });
+  },
+  demoSeveralResults() {
+    let input = $('#demo-several-results-input');
+    let match = $('.demo-several-results-match');
+
+    input.on('input', (event) => {
+      let value = $(event.target).val();
+      if (value=="alexandre") {
+        match.removeClass('o-80 bg-ghost').addClass('bg-white')
+      } else {
+        match.addClass('o-80 bg-ghost').removeClass('bg-white')
+      }
+    });
+  },
+  demoAlex() {
+    let input = $('#demo-alex-input');
+    let results = $('.demo-alex-result');
+
+    input.on('input', (event) => {
+      let value = $(event.target).val();
+      results.each(function(index, result) {
+        var $result = $(result);
+        var name = $result.data('name');
+        var re = new RegExp(`^${value}`, 'i');
+        if (re.test(name) && value !== "") {
+          $result.removeClass('o-80 bg-ghost').addClass('bg-white')
+        } else {
+          $result.addClass('o-80 bg-ghost').removeClass('bg-white')
+        }
+      });
+    });
+  }
 }
 export default Talk;

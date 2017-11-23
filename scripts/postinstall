@@ -7,8 +7,8 @@ mkdir -p ./app/styles/vendors
 cp ./node_modules/reveal.js/js/reveal.js ./app/assets/js/vendors/reveal.js
 cp ./node_modules/reveal.js/css/reveal.scss ./app/styles/vendors/_reveal.scss
 
-## Tachyons
-cp ./node_modules/tachyons/css/tachyons.css ./app/styles/vendors/_tachyons.css
+## tachyons-algolia
+cp -r ./node_modules/tachyons-algolia/src/ ./app/styles/vendors/tachyons-algolia/
 
 ## jQuery
 cp ./node_modules/jquery/dist/jquery.min.js ./app/assets/js/vendors/jquery.js

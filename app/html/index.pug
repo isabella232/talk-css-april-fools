@@ -93,7 +93,7 @@ body
               p the goal of the hack will be to overcome those limitations
               p instead of focusing on what CSS cannot do very well, we'll focus on what it is very good at
               
-        section.slide--horizontal.slide--theme1
+        section.slide--horizontal
           .bg-gradient-april-fools.white.h-100.flcnw.flc
             .f-headline.lh-title.mh6.ph6 Selectors
           aside.notes 
@@ -119,114 +119,11 @@ body
               p and when you think about this definition, it's pretty close to what you would expect a search engine to do
               p you might have a large pools of potential results, you are only interested in the one that are relevant to your keywords
 
-        section.slide--horizontal
-          .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b Basic principles
-            .fla.flcnw.h-100
-              .fln.h-60.flrnw
-                .fln.w-50.flc
-                  pre.bg-near-black.pa4.lh-copy.tl
-                    code.language-html
-                      |&lt;input type="text" value="tim" /&gt;
-                      |&lt;div id="result"&gt;&lt;/div&gt;
-              .fln.h-40.flc
-                .fln.w-80.flrnw.flc
-                  .fln.w-50
-                    input.fln.pa2.br2.f2.w-50.bunting(type="text" value="tim")
-                  .fln.w-50
-                    .db.ba.pa2.bg-near-white.o-40.f2.bunting #result
-            aside.notes
-              // | HTML: input + div
-              // | CSS: evolves over time
-              // | Rendering: evolves with the CSS, something is targetted
-              p 
 
 
-        section.slide--horizontal
-          .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b Several elements
-            .fla.flcnw
-              | Changing markup a bit
-              | Default CSS hides everything, show everything when empty
-              | Adding markup for each input, show one more
-            aside.notes
-              p 
-
-
-        section.slide--horizontal
-          .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b Does not work
-            .fla.flcnw
-              | CSS is only applied to what is in the markup
-              | updating the value won't update the markup, so no render
-              | Javascript is able to read it
-              | Show an HTML code + the resulting input
-              | show that dynamic value is updated, but static value stays the same
-            aside.notes
-              p 
-
-
-        section.slide--horizontal
-          .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b Adding event handler
-            .fla.flcnw
-              | Adding the onchange handler
-              | update value attribute directly
-              | show that values are updates, and CSS is applied
-            aside.notes
-              p 
-
-
-        section.slide--horizontal
-          .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b Prefix match
-            .fla.flcnw
-              | search for alexander, alexandre, alexandria, etc
-              | would be better if matches directly from alex, or even from a or al
-            aside.notes
-              p 
-
-
-        section.slide--horizontal
-          .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b Other side of the mirror
-            .fla.flcnw
-              | Two sides: indexing and searching
-              | searching is when you're a user: what results will i get with this keyword
-              | indexing is when building: what are the srings that will yield this results
-            aside.notes
-              p 
-
-
-        section.slide--horizontal
-          .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b N-grams
-            .fla.flcnw
-              | Build the sequence of ngrams that will find all alex
-              | do a table with what lead to alexander, alexandre and what n-gram yield to waht
-            aside.notes
-              p 
-
-
-        section.slide--horizontal
-          .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b N-grams in CSS
-            .fla.flcnw
-              | Same table, but with CSS rules, what is matching what
-            aside.notes
-              p 
-
-
-        section.slide--horizontal
-          .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b Edge-cases
-            .fla.flcnw
-              | Search engine is full of edgecases, and you fix them by adding more n-grams
-              | accents
-              | synonyms
-              | typo tolerance
-            aside.notes
-              p 
+        include ./slides/basic-principles
+        include ./slides/dynamic-update
+        include ./slides/several-results
 
 
         section.slide--horizontal
@@ -239,7 +136,8 @@ body
               | exact match better than partial one
               | fixed order in markup, but need to reorder
             aside.notes
-              p 
+              p I'm able to match about anything, great
+              p Now I should display them by order of relevance
 
 
         section.slide--horizontal

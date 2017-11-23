@@ -9,5 +9,5 @@ rsync \
   --prune-empty-dirs \
   --compress \
   ./public/* \
-  pixelastic:/var/www/talks.pixelastic.com/slides/css-search-engine-hackference-2017/
+  pixelastic:/var/www/talks.pixelastic.com/slides/hacking-css-dotcss-2017/
 
