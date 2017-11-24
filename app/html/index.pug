@@ -8,12 +8,16 @@ body
         // Title
         section.slide--horizontal.slide--theme1
           .bg-gradient-april-fools.white.h-100.flcnw.flc
-            .f-subheadline.lh-title.mh6.ph6 Hacking CSS into a Search Engine
+            .f-subheadline.lh-title.mh4.ph6 
+              .db Building a 
+                .di.b search engine 
+              .db with 
+                .di.b CSS
             // Tim Carry, dev advocate at Algolia. Twitter
 
         section.slide--horizontal
           .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b Hacking:
+            .fln.f1.lh-title.tl.b Hacking is...
             .fla.flcnw.f-subheadline.flc
               .db
                 .di Overcoming 
@@ -34,17 +38,17 @@ body
 
         section.slide--horizontal
           .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b Search engine
+            .fln.f1.lh-title.tl.b New outcome
             .fla.flcnw
               .fla.flrnw
                 .fln.w-25.flc keywords =>
                 .fla.flc 
                   img(src="./img/input-output.png")
                 .fln.w-25.flc => results
-              .fln.flrnw.h4.flc.b.f1.fragment
-                .fln.w-third Relevant
-                .fln.w-third Fast
-                .fln.w-third Easy to use
+              // .fln.flrnw.h4.flc.b.f1.fragment
+              //   .fln.w-third Relevant
+              //   .fln.w-third Fast
+              //   .fln.w-third Easy to use
             aside.notes
               p A search engine, in its most basic forms takes keywords as input and gives you results as output
               p A great search engine also is Relevant, Fast and Easy to use
@@ -52,17 +56,17 @@ body
               p - Fast because I want the processing to be done quickly
               p - Easy to use, want it to look like a real thing, not a CSS hack
 
-        section.slide--horizontal
-          .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b Game rules
-            .fla.flcnw.flc
-              .fln.flrnw.w-60.br4.f2
-                .fla.bg-white.br3.br--left.ph1.blue CSS
-                .fln.bg-orange.ph2 HTML
-                .fln.bg-yellow.br3.br--right.pl1.cst-constraint-js
-            aside.notes
-              p Those are limitations of my system, that I put upon myself
-              p Those are the "game rules" I'll follow
+        // section.slide--horizontal
+        //   .h-100.flcnw.pa3
+        //     .fln.f1.lh-title.tl.b Game rules
+        //     .fla.flcnw.flc
+        //       .fln.flrnw.w-60.br4.f2
+        //         .fla.bg-white.br3.br--left.ph1.blue CSS
+        //         .fln.bg-orange.ph2 HTML
+        //         .fln.bg-yellow.br3.br--right.pl1.cst-constraint-js
+        //     aside.notes
+        //       p Those are limitations of my system, that I put upon myself
+        //       p Those are the "game rules" I'll follow
 
         section.slide--horizontal
           .h-100.flcnw.pa3
@@ -72,6 +76,14 @@ body
               p Enough talking about the hack, let's show it in action
               p This is the time for the live demo
               p The dangerous time where everything can fail
+
+        // section.slide--horizontal
+        //   .h-100.flcnw.pa3
+        //     .fln.f1.lh-title.tl.b Challenge overview
+        //     .fla.flcnw
+        //       p [] css all the things
+        //       p [] minimal html
+        //       p [] no javascript
 
         section.slide--horizontal
           .h-100.flcnw.pa3
@@ -107,11 +119,11 @@ body
             .fla.flcnw.f-subheadline.flc
               .db
                 .di Selecting only 
-                .di.b.green relevant 
+                .di.b.koromiko relevant 
                 .di items
               .db 
                 .di from a 
-                .di.b.red large pool 
+                .di.b.bittersweet large pool 
                 .di of choices
             aside.notes 
               p You can have the most complex and unsemantic HTML structure, you'll still be able to select exactly the one you care about
@@ -124,97 +136,33 @@ body
         include ./slides/basic-principles
         include ./slides/dynamic-update
         include ./slides/several-results
+        include ./slides/ordering-results
+        include ./slides/highlight
 
+        // section.slide--horizontal
+        //   .h-100.flcnw.pa3
+        //     .fln.f1.lh-title.tl.b Challenge overview
+        //     .fla.flcnw
+        //       p ✔ fast, relevant, easy to use
+        //       p ✔ minimal html
+        //       p ✘ no javascript
+        //       p ✔ css all the things
 
-        section.slide--horizontal
-          .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b Ordering queries
-            .fla.flcnw
-              | several matches
-              | relevance is ordering them
-              | match in first name better than last name
-              | exact match better than partial one
-              | fixed order in markup, but need to reorder
-            aside.notes
-              p I'm able to match about anything, great
-              p Now I should display them by order of relevance
-
-
-        section.slide--horizontal
-          .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b CSS order
-            .fla.flcnw
-              | all flexbox, so can use `order` to change their order
-              | CSS example based on what is typed, will display one or another
-            aside.notes
-              p 
-
+        // How to solve a complex problem
+        section.slide--horizontal.slide--theme1
+          .bg-gradient-april-fools.white.h-100.flcnw.flc
+            .f-subheadline.lh-title.mh6.ph5
+              | Impossible only means you haven't found the solution 
+              .di.b yet
+              .di .
 
         section.slide--horizontal
           .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b Highlight
+            .fln.f1.lh-title.tl.b Thank you
             .fla.flcnw
-              | Might have the best sorting algorithm, if user does not get it, useless
-              | users must understand why results are here, otherwise will think your search is broken
-              | subtel way of doing it is hihglight
-              | not bright yellow one, bold is enough
-            aside.notes
-              p 
-
-
-        section.slide--horizontal
-          .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b Highlight in CSS
-            .fla.flcnw
-              | Using CSS pseudo-selectors
-              | can't use HTML inside, can't inception style styles
-              | use custom font: normal + bold, in private use area
-            aside.notes
-              p 
-
-
-        section.slide--horizontal
-          .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b Custom font matching
-            .fla.flcnw
-              | several matches based on what is typed, change the display
-              | lots and lots of rules
-            aside.notes
-              p 
-
-
-        section.slide--horizontal
-          .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b Sum up
-            .fla.flcnw
-              | it's fast, relevant and easy to use. mission accomplished
-              | minimal HTML (all empty divs)
-              | minimal JS (one liner)
-              | CSS all the things (15MB of minimized CSS...)
-            aside.notes
-              p 
-
-
-        section.slide--horizontal
-          .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b Don't use it
-            .fla.flcnw
-              | Do not use it in production
-              | It's a POC, not production ready
-              | Exercise to see if possible, and to learn
-            aside.notes
-              p 
-
-
-        section.slide--horizontal
-          .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b Conclusion
-            .fla.flcnw
-              | Impossible only means you haven't found the solution yet
-              | Hack things. Do something different with it. Helps understand strengths and weaknesses
-            aside.notes
-              p 
-
+              p Link to demo
+              p Twitter
+              p Link to slides
 
         include ./partials/aside-horizontal
         include ./partials/aside-vertical

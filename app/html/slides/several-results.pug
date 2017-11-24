@@ -26,17 +26,19 @@ section.slide--horizontal
       .fln.w-40.flc
         pre.bg-near-black.pa4.lh-copy.tl.f3
           code.language-html
-            |&lt;input type="text" value="" 
-            |  oninput="…" /&gt;
+            |&lt;input 
+            |  type="text" value="" 
+            |  oninput="…" 
+            |/&gt;
             |&lt;!-- one div per employee --&gt;
             |&lt;div id="results"&gt;
             |  &lt;div id="result0"&gt;&lt;/div&gt;
             |  &lt;div id="result1"&gt;&lt;/div&gt;
             |  &lt;div id="result2"&gt;&lt;/div&gt;
             |  […]
-            |  &lt;div id="result98"&gt;&lt;/div&gt;
-            |  &lt;div id="result99"&gt;&lt;/div&gt;
-            |  &lt;div id="result100"&gt;&lt;/div&gt;
+            |  &lt;div id="result148"&gt;&lt;/div&gt;
+            |  &lt;div id="result149"&gt;&lt;/div&gt;
+            |  &lt;div id="result150"&gt;&lt;/div&gt;
             |&lt;/div&gt;
       .fln.w-60.flcnw.flccv
         .fln.bg-near-black.fragment
@@ -49,7 +51,7 @@ section.slide--horizontal
               |#result16:before { content: "Alexandre Meunier" }
               |#result17:before { content: "Alexandre Stanislawski" }
               |[…]
-              |#result100:before { content: "Zo Asmail" }
+              |#result150:before { content: "Zo Asmail" }
           pre.ph3.pb3.lh-copy.tl.f3.w-100.fragment
             code.language-scss
               |// Hide them all
@@ -67,11 +69,11 @@ section.slide--horizontal
   .h-100.flcnw.pa3
     .fln.f1.lh-title.tl.b Several results at once
     .fla.flrnw.h-100
-      .fln.w-50.flc.flcnw
+      .fln.w-60.flc.flcnw
         .fln.h-50.flc
           input#demo-several-results-input.pa2.br2.f1.w-80.bunting(type="text" value="")
         .fln.h-50.flc
-          pre.bg-near-black.pa3.lh-copy.tl.f4
+          pre.bg-near-black.pa3.lh-copy.tl.f3
             code.language-scss
               |input[value="alexandre"] ~ #result #result15,
               |input[value="alexandre"] ~ #result #result16,
@@ -79,8 +81,8 @@ section.slide--horizontal
               |  display: block
               |}
 
-      .fln.w-50.flc
-        .fln.flcnw.bg-white.bunting.pa2.br3.ba.bw1.w-70
+      .fln.w-40.flc
+        .fln.flcnw.bg-white.bunting.pa2.br3.ba.bw1.w-90
           .fln.flrnw.bb.bg-ghost.o-80
             .fln.flc.pa2
               img.h3(src="./img/aurora-pleguezuelo.webp")
@@ -110,7 +112,7 @@ section.slide--horizontal
 
 section.slide--horizontal
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Prefix matching
+    .fln.f1.lh-title.tl.b More Alex
     .fla.flcnw.h-100.f1.ba.bw1.b--titan-white.mt3
       .fln.flrnw.b.f2.deep-cove.pa1.bb.b--titan-white
         .fln.w-50.tl Expected result
@@ -133,7 +135,7 @@ section.slide--horizontal
 
 section.slide--horizontal
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Prefix matching
+    .fln.f1.lh-title.tl.b N-grams
     .fla.flcnw.h-100.f1.ba.bw1.b--titan-white.mt3.tl.flcspb
       .fln.flrnw.b.f2.deep-cove.pa1.bb.b--titan-white
         .fln.w-50 Expected result
@@ -174,70 +176,70 @@ section.slide--horizontal
         .fln.w-50.pl5 Alexandria
         .fln.w-50.f2.flc + Alexandr, Alexandri, Alexandria
 
+// section.slide--horizontal
+//   .h-100.flcnw.pa3
+//     .fln.f1.lh-title.tl.b In CSS:
+//     .fla.flcnw.h-100.flc
+//       pre.bg-near-black.pa2.lh-copy.tl.f2.fln
+//         code.language-scss
+//           |input[value="a"]          ~ #results #result18,
+//           |input[value="al"]         ~ #results #result18,
+//           |input[value="ale"]        ~ #results #result18,
+//           |input[value="alex"]       ~ #results #result18,
+//           |input[value="alexa"]      ~ #results #result18,
+//           |input[value="alexan"]     ~ #results #result18,
+//           |input[value="alexand"]    ~ #results #result18,
+//           |input[value="alexandr"]   ~ #results #result18,
+//           |input[value="alexandri"]  ~ #results #result18,
+//           |input[value="alexandria"] ~ #results #result18 {
+//           |  display: block
+//           |}
+
+// section.slide--horizontal
+//   .h-100.flcnw.pa3
+//     .fln.f1.lh-title.tl.b Several results at once
+//     .fla.flrnw.h-100
+//       .fln.w-50.flc.flcnw
+//         .fln.flc
+//           input#demo-alex-input.pa2.br2.f1.w-80.bunting(type="text" value="")
+//
+//       .fln.w-50.flc
+//         .fln.flcnw.bg-white.bunting.pa2.br3.ba.bw1.w-70
+//           .fln.flrnw.pa2.bg-ghost.o-80 […]
+//           - 
+//             var items = [
+//               {"name": "Alexander Kudelka", "picture": "alexander-kudelka.webp"},
+//               {"name": "Alexander Webb", "picture": "alexander-webb.webp"},
+//               {"name": "Alexandra Prokhorova", "picture": "alexandra-prokhorova.webp"},
+//               {"name": "Alexandre Collin", "picture": "alexandre-collin.webp"},
+//               {"name": "Alexandre Meunier", "picture": "alexandre-meunier.webp"},
+//               {"name": "Alexandre Popp", "picture": "alexandre-popp.webp"},
+//               {"name": "Alexandre Stanislawski", "picture": "alexandre-stanislawski.webp"},
+//               {"name": "Alexandria Avritch", "picture": "alexandria-avritch.webp"}
+//             ]
+//           each item in items
+//             .fln.flrnw.bb.bg-ghost.o-80.f3.demo-alex-result(data-name=`${item.name}`)
+//               .fln.flc.pa2
+//                 img.h2(src=`./img/${item.picture}`)
+//               .fla.flcnw.flccv.tl.pl2 #{item.name}
+//           .fln.flrnw.pa2.bg-ghost.o-80 […]
+
 section.slide--horizontal
   .h-100.flcnw.pa3
     .fln.f1.lh-title.tl.b In CSS:
     .fla.flcnw.h-100.flc
       pre.bg-near-black.pa2.lh-copy.tl.f2.fln
         code.language-scss
-          |input[value="a"]          ~ #results #result18,
-          |input[value="al"]         ~ #results #result18,
-          |input[value="ale"]        ~ #results #result18,
-          |input[value="alex"]       ~ #results #result18,
-          |input[value="alexa"]      ~ #results #result18,
-          |input[value="alexan"]     ~ #results #result18,
-          |input[value="alexand"]    ~ #results #result18,
-          |input[value="alexandr"]   ~ #results #result18,
-          |input[value="alexandri"]  ~ #results #result18,
-          |input[value="alexandria"] ~ #results #result18 {
-          |  display: block
-          |}
-
-section.slide--horizontal
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Several results at once
-    .fla.flrnw.h-100
-      .fln.w-50.flc.flcnw
-        .fln.flc
-          input#demo-alex-input.pa2.br2.f1.w-80.bunting(type="text" value="")
-
-      .fln.w-50.flc
-        .fln.flcnw.bg-white.bunting.pa2.br3.ba.bw1.w-70
-          .fln.flrnw.pa2.bg-ghost.o-80 […]
-          - 
-            var items = [
-              {"name": "Alexander Kudelka", "picture": "alexander-kudelka.webp"},
-              {"name": "Alexander Webb", "picture": "alexander-webb.webp"},
-              {"name": "Alexandra Prokhorova", "picture": "alexandra-prokhorova.webp"},
-              {"name": "Alexandre Collin", "picture": "alexandre-collin.webp"},
-              {"name": "Alexandre Meunier", "picture": "alexandre-meunier.webp"},
-              {"name": "Alexandre Popp", "picture": "alexandre-popp.webp"},
-              {"name": "Alexandre Stanislawski", "picture": "alexandre-stanislawski.webp"},
-              {"name": "Alexandria Avritch", "picture": "alexandria-avritch.webp"}
-            ]
-          each item in items
-            .fln.flrnw.bb.bg-ghost.o-80.f3.demo-alex-result(data-name=`${item.name}`)
-              .fln.flc.pa2
-                img.h2(src=`./img/${item.picture}`)
-              .fla.flcnw.flccv.tl.pl2 #{item.name}
-          .fln.flrnw.pa2.bg-ghost.o-80 […]
-
-section.slide--horizontal
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Tip of the iceberg
-    .fla.flcnw.h-100.flc
-      pre.bg-near-black.pa2.lh-copy.tl.f2.fln
-        code.language-scss
-          |input[value="a"]          ~ #results #result18,
-          |input[value="al"]         ~ #results #result18,
-          |input[value="ale"]        ~ #results #result18,
-          |input[value="alex"]       ~ #results #result18,
-          |input[value="alexa"]      ~ #results #result18,
-          |input[value="alexan"]     ~ #results #result18,
-          |input[value="alexand"]    ~ #results #result18,
-          |input[value="alexandr"]   ~ #results #result18,
-          |input[value="alexandri"]  ~ #results #result18,
-          |input[value="alexandria"] ~ #results #result18 {
+          |input[value="a"]          ~ #results #result22,
+          |input[value="al"]         ~ #results #result22,
+          |input[value="ale"]        ~ #results #result22,
+          |input[value="alex"]       ~ #results #result22,
+          |input[value="alexa"]      ~ #results #result22,
+          |input[value="alexan"]     ~ #results #result22,
+          |input[value="alexand"]    ~ #results #result22,
+          |input[value="alexandr"]   ~ #results #result22,
+          |input[value="alexandri"]  ~ #results #result22,
+          |input[value="alexandria"] ~ #results #result22 {
           |  display: block
           |}
     .absolute.absolute-0.bg-deep-cove-50.fragment
@@ -252,5 +254,5 @@ section.slide--horizontal
       .w-100.h-100
         .flrnw.h-100.w-100.flc
           .fln.radical-red.f-headline.b.h-50.w-80.flc.flcnw.flcspa.scale-200
-            .fln x 100+
+            .fln x 150
 

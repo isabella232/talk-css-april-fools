@@ -1,106 +1,73 @@
-// Without / With highlight
-section.slide--vertical
+section.slide--horizontal
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Explaining results
-    .fla.flcnw
-      .fln.pa2.mt4
-        input.fln.pa1.br2.f2.w-50(type="text", value="st")
-      .fla.relative
-        img.absolute.h-100.absolute-center-horizontal(src='./img/nohighlight-st.png')
-
-// Google highlight
-section.slide--vertical
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Highlighting
-    .fla.flcnw.flc
-      .fake-browser.shadow-3.center.w-60.f0
-        img.w-100(src='./img/highlight-google.png')
-
-// Generate content
-section.slide--vertical
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Highlight in generated content?
-    .fla.flcnw.mt4
-      .fln.pa2.mt4
-        input.fln.pa1.br2.f2.w-50(type="text", value="gian")
-      .fla.flrnw
-        .fln.w-30.flc
-          img(src='./img/gianluca.png')
-        .fla.flc
-          pre.bg-near-black.pa2.lh-copy.tl.f3
-            code.language-scss
-              |#result_42:before {
-              |  content: "Gianluca Bargelli \A Full-Stack Engineer";
-              |}
-
-// Merge of two fonts
-section.slide--vertical
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Merge of two fonts
-    .fla.flcnw
-      .fla.flrnw
-        .fln.w-third.flc
-          img(src='./img/highlight-gianluca.png')
-        .fla.flc.flcnw
-          img(src='./img/raleway.png')
-          .db.f1.b.dark-gray +
-          img(src='./img/raleway-bold.png')
-          .bg-black-80.ph2.lh-copy.tl.near-white.dejavu.mt3 U+E000 – U+F8FF
-      .fln.pa2
-        pre.bg-near-black.pa2.lh-copy.tl
+    .fln.f1.lh-title.tl.b Highlight
+    .fla.flcnw.h-100.mt4
+      .fln.h-50.flrnw.flc
+        .fln.w-50.flc
+          input.fln.pa2.br2.f1.w-80.bunting(type="text" value="mar")
+        .fln.w-50.flc
+          .fln.flcnw.bg-white.bunting.pa2.br3.ba.bw1.w-90
+            .fln.flrnw.f2
+              .fln.flc.pa2
+                img.h3(src="./img/marion-aguirre.webp")
+              .fla.flcnw.flccv.tl.pl2
+                .fln
+                  .di.b Mar
+                  .di ion Aguirre
+      .fln.h-50.flc
+        pre.bg-near-black.pa3.lh-copy.tl.f2.fln
           code.language-scss
-            |#result_42:before {
-            |  content: "\e647 \e669 \e661 \e66e luca Bargelli \A Full-Stack Engineer";
+            |#result8:before { 
+            |  content: "Marion Aguirre"; 
             |}
 
-// Highlighting for us
-section.slide--vertical
+section.slide--horizontal
   .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Subtle but useful
-    .fla.flcnw
-      .fln.pa2.mt4
-        input.fln.pa1.br2.f2.w-50(type="text", value="st")
-      .fla.relative
-        img.absolute.h-100.absolute-center-horizontal(src='./img/highlight-st.png')
-
-// Flex order
-section.slide--vertical
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Ordering results
-    .fla.flcnw
-      .fla.flrnw
+    .fln.f1.lh-title.tl.b Custom font
+    .fla.flcnw.h-100.mt4.mb4
+      .fln.h-50.relative
+        .fln.absolute.top-10.left-10
+          img.bg-titan-white.pa3.br3.ba.bunting(src="./img/raleway.png")
+          .db.bg-titan-white.pa3.br3.shadow-3.ba.bunting.absolute.bottom--3.right--5
+            img(src="./img/raleway-bold.png")
+            .code.absolute.bottom-0.right-0.br3.br--bottom.br--right \e600 - \e700
+      .fln.h-25.flrnw.fragment
         .fln.w-40.flc
-          .fln
-            pre.bg-near-black.pa3.lh-copy.tl.f4
-              code.language-html
-                |&lt;input type="text" id="input"/&gt;
-                |
-                |&lt;div id="results"&gt;
-                |  &lt;div id="result_1"&gt;&lt;/div&gt;
-                |  &lt;div id="result_2"&gt;&lt;/div&gt;
-                |  […]
-                |  &lt;div id="result_98"&gt;&lt;/div&gt;
-                |  &lt;div id="result_99"&gt;&lt;/div&gt;
-                |&lt;/div&gt;
+          .fln.flcnw.bg-white.bunting.pa2.br3.ba.bw1.w-90
+            .fln.flrnw.f2
+              .fln.flc.pa2
+                img.h3(src="./img/marion-aguirre.webp")
+              .fla.flcnw.flccv.tl.pl2
+                .fln
+                  .di.b Mar
+                  .di ion Aguirre
+        .fln.w-60.flc
+          pre.bg-near-black.pa3.lh-copy.tl.f3.fln.w-100
+            code.language-scss
+              |input[value="mar"] ~ #results #result8:before { 
+              |  content: "\e64d \e661 \e672 ion Aguirre"; 
+              |}
+      .fln.h-25.flrnw.fragment
+        .fln.w-40.flc
+          .fln.flcnw.bg-white.bunting.pa2.br3.ba.bw1.w-90
+            .fln.flrnw.f2
+              .fln.flc.pa2
+                img.h3(src="./img/marion-aguirre.webp")
+              .fla.flcnw.flccv.tl.pl2
+                .fln
+                  .di.b Mari
+                  .di on Aguirre
+        .fln.w-60.flc
+          pre.bg-near-black.pa3.lh-copy.tl.f3.fln.w-100
+            code.language-scss
+              |input[value="mari"] ~ #results #result8:before { 
+              |  content: "\e64d \e661 \e672 \e669 on Aguirre"; 
+              |}
 
-        .fla.flc
-          .fln
-            pre.bg-near-black.pa3.lh-copy.tl
-              code.language-scss
-                |// Set a flex context
-                |#results div { flex: 1; }
-                |// Change order on specific queries
-                |#input[value="st" i] ~ #result_4 {
-                |  order: 1;
-                |}
-                |#input[value="st" i] ~ #result_8 {
-                |  order: 2;
-                |}
-                |#input[value="st" i] ~ #result_15 {
-                |  order: 3;
-                |}
-      .fla.flc
-        .fln.w-75.flrnw.flspah
-          .db.ba.w-20.h3.flc #result_4
-          .db.ba.w-20.h3.flc #result_8
-          .db.ba.w-20.h3.flc #result_15
+
+
+
+
+
+
+
