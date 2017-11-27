@@ -1,24 +1,26 @@
-section.slide--horizontal
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Does not work...
+section.slide--horizontal(data-transition="none")
+  .h-100.flcnw.bg-deep-cove
+    .fln.f1.lh-title.tl.b.pt3.pl3 Does not work...
     .fla.flcnw.h-100
       .fln.h-third.flc
         .fln.w-80.flrnw.flc
-          .fln.w-50
-            input.fln.pa2.br2.f1.w-80.bunting(type="text" value="")
           .fln.w-50.flc
-            .db.ba.pa2.w-50.bg-ghost-80.f1.transparent #result
-      .fln.h-third.flc
-        pre.bg-near-black.pa4.lh-copy.tl.f2
-          code.language-html
-            |&lt;input type="text" value="" /&gt;
-            |&lt;div id="result"&gt;&lt;/div&gt;
-      .fln.h-third.flc
-        pre.bg-near-black.pa4.lh-copy.tl.f2
-          code.language-scss
-            |input[value="tim"] ~ #result:before {
-            |  content: "Tim Carry";
-            |}
+            +input.w-70.bg-bunting(value="")
+          .fln.w-50.flc
+            .db.shadow-1.br6.bg-titan-white.bunting.w-50.pa3.f1.o-50 #result
+      .fln.h-two-thirds.flcnw.bg-near-black.flc
+        .fln
+          .fln
+            pre.pa4.lh-copy.tl.f2
+              code.language-html
+                |&lt;input type="text" value="" /&gt;
+                |&lt;div id="result"&gt;&lt;/div&gt;
+          .fln
+            pre.pa4.lh-copy.tl.f2
+              code.language-scss
+                |input[value="tim"] ~ #result:before {
+                |  content: "Tim Carry";
+                |}
     aside.notes
       p On first page load, the input is empty
       p but even if you type something inside, it's not picked up by CSS
@@ -27,72 +29,80 @@ section.slide--horizontal
       p what you type is a dynamic value that can be read by JS though
       p so I'll need to add a bit of JS to copy this value to the actual attribute
 
-section.slide--horizontal
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b 
+section.slide--horizontal(data-transition="none")
+  .h-100.flcnw.bg-deep-cove
+    .fln.f1.lh-title.tl.b.pl3.pt3
       .di Adding an 
       .code oninput
       .di  handler
     .fla.flcnw.h-100
       .fln.h-third.flc
         .fln.w-80.flrnw.flc
-          .fln.w-50
-            input#demo-dynamic-value-input.fln.pa2.br2.f1.w-80.bunting(type="text" value="")
           .fln.w-50.flc
-            #demo-dynamic-value-nomatch.db.ba.pa2.w-50.bg-ghost-80.f1.transparent #result
-            #demo-dynamic-value-match.dn.ba.pa2.w-50.bg-white.bunting.f1 Tim Carry
-      .fln.h-third.flc
-        pre.bg-near-black.pa3.lh-copy.tl.f2.language-html
-          .db
-            span.token.tag
+            +input.w-70.bg-bunting#demo-dynamic-value-input(value="")
+          .fln.w-50.flc
+            .w-50#demo-dynamic-value-nomatch
+              .shadow-1.br6.bg-titan-white.bunting.pa3.f1.o-50 #result
+            .dn#demo-dynamic-value-match
+              .fln.flrnw.shadow-1.br6.bg-gradient-blue.titan-white.pa3.f1
+                .fln.flc.pr2
+                  img.h3.br-100.grayscale(src="./img/avatar.jpg")
+                .fla.flcnw.flccv.tl.pl2 Tim Carry
+      .fln.h-two-thirds.flcnw.bg-near-black.flc
+        .fln
+          .fln
+            pre.pa2.lh-copy.tl.f2.language-html
+              .db
+                span.token.tag
+                  span.token.tag
+                    span.token.punctuation <
+                    | input 
+                  span.token.attr-name type
+                  span.token.attr-value
+                    span.token.punctuation =
+                    span.token.punctuation "
+                    | text
+                    span.token.punctuation " 
+                  span.token.attr-name value
+                  span.token.attr-value
+                    span.token.punctuation =
+                    span#demo-dynamic-value-value.token.punctuation ""
+              .db
+                span.token.attr-name   oninput
+                span.token.attr-value
+                  span.token.punctuation =
+                  span.token.punctuation "
+                  | this.setAttribute(
+                  span.token.punctuation '
+                  | value
+                  span.token.punctuation '
+                  | , this.value)
+                  span.token.punctuation "
+              .db
+                span.token.punctuation />
+              .db
               span.token.tag
-                span.token.punctuation <
-                | input 
-              span.token.attr-name type
-              span.token.attr-value
-                span.token.punctuation =
-                span.token.punctuation "
-                | text
-                span.token.punctuation " 
-              span.token.attr-name value
-              span.token.attr-value
-                span.token.punctuation =
-                span#demo-dynamic-value-value.token.punctuation ""
-          .db
-            span.token.attr-name   oninput
-            span.token.attr-value
-              span.token.punctuation =
-              span.token.punctuation "
-              | this.setAttribute(
-              span.token.punctuation '
-              | value
-              span.token.punctuation '
-              | , this.value)
-              span.token.punctuation "
-          .db
-            span.token.punctuation />
-          .db
-          span.token.tag
-            span.token.tag
-              span.token.punctuation <
-              | div 
-            span.token.attr-name id
-            span.token.attr-value
-              span.token.punctuation =
-              span.token.punctuation "
-              | result
-              span.token.punctuation "
-            span.token.punctuation >
-          span.token.tag
-            span.token.tag
-              span.token.punctuation &lt;/div
-            span.token.punctuation >
-      .fln.h-third.flc
-        pre.bg-near-black.pa4.lh-copy.tl.f3
-          code.language-scss
-            |input[value="tim"] ~ #result:before {
-            |  content: "Tim Carry";
-            |}
+                span.token.tag
+                  span.token.punctuation <
+                  | div 
+                span.token.attr-name id
+                span.token.attr-value
+                  span.token.punctuation =
+                  span.token.punctuation "
+                  | result
+                  span.token.punctuation "
+                span.token.punctuation >
+              span.token.tag
+                span.token.tag
+                  span.token.punctuation &lt;/div
+                span.token.punctuation >
+          .fln
+            pre.pa4.lh-copy.tl.f2
+              code.language-scss
+                |input[value="tim"] ~ #result:before {
+                |  content: "Tim Carry";
+                |}
+
     aside.notes
       p On first page load, the input is empty
       p but even if you type something inside, it's not picked up by CSS

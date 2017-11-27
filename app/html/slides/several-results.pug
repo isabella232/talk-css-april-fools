@@ -3,28 +3,28 @@ section.slide--horizontal
     .fln.f1.lh-title.tl.b Several results at once
     .fla.flrnw.h-100
       .fln.w-50.flc
-        input.fln.pa2.br2.f1.w-80.bunting(type="text" value="alexandre")
+        +input.w-70.bg-bunting(value="alexandre")
       .fln.w-50.flc
-        .fln.flcnw.bg-white.bunting.pa2.br3.ba.bw1.w-70
+        .fln.flcnw.bg-gradient-blue.white.pa2.br3.w-70
           .fln.flrnw.bb
             .fln.flc.pa2
-              img.h3(src="./img/alexandre-collin.webp")
+              img.h3(src="./img/alexandre-collin.png")
             .fla.flcnw.flccv.tl.pl2 Alexandre Collin
           .fln.flrnw.bb
             .fln.flc.pa2
-              img.h3(src="./img/alexandre-meunier.webp")
+              img.h3(src="./img/alexandre-meunier.png")
             .fla.flcnw.flccv.tl.pl2 Alexandre Meunier
           .fln.flrnw
             .fln.flc.pa2
-              img.h3(src="./img/alexandre-stanislawski.webp")
+              img.h3(src="./img/alexandre-stanislawski.png")
             .fla.flcnw.flccv.tl.pl2 Alexandre Stanislawski
 
 section.slide--horizontal
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Slight markup change
+  .h-100.flcnw.pa3.bg-near-black
+    .fln.f1.lh-title.tl.b More divs
     .fla.flrnw.h-100
-      .fln.w-40.flc
-        pre.bg-near-black.pa4.lh-copy.tl.f3
+      .fln.w-40
+        pre.pa4.lh-copy.tl.f3
           code.language-html
             |&lt;input 
             |  type="text" value="" 
@@ -41,7 +41,7 @@ section.slide--horizontal
             |  &lt;div id="result150"&gt;&lt;/div&gt;
             |&lt;/div&gt;
       .fln.w-60.flcnw.flccv
-        .fln.bg-near-black.fragment
+        .fln.fragment
           pre.pa3.lh-copy.tl.f3.w-100
             code.language-scss
               |// Pre-fill the content
@@ -71,7 +71,7 @@ section.slide--horizontal
     .fla.flrnw.h-100
       .fln.w-60.flc.flcnw
         .fln.h-50.flc
-          input#demo-several-results-input.pa2.br2.f1.w-80.bunting(type="text" value="")
+          +input.w-80.bg-bunting#demo-several-results-input(value="")
         .fln.h-50.flc
           pre.bg-near-black.pa3.lh-copy.tl.f3
             code.language-scss
@@ -82,28 +82,28 @@ section.slide--horizontal
               |}
 
       .fln.w-40.flc
-        .fln.flcnw.bg-white.bunting.pa2.br3.ba.bw1.w-90
-          .fln.flrnw.bb.bg-ghost.o-80
+        .fln.flcnw.bg-white.bunting.br3.ba.bw1.w-90
+          .fln.flrnw.bb.bg-ghost.o-80.br3.br--top
             .fln.flc.pa2
-              img.h3(src="./img/aurora-pleguezuelo.webp")
+              img.h3(src="./img/aurora-pleguezuelo.png")
             .fla.flcnw.flccv.tl.pl2 Aurora Pleguezuelo
           .fln.flrnw.pa2.bg-ghost.o-80 […]
           .fln.flrnw.bb.bg-ghost.o-80.demo-several-results-match
             .fln.flc.pa2
-              img.h3(src="./img/alexandre-collin.webp")
+              img.h3(src="./img/alexandre-collin.png")
             .fla.flcnw.flccv.tl.pl2 Alexandre Collin
           .fln.flrnw.bb.bg-ghost.o-80.demo-several-results-match
             .fln.flc.pa2
-              img.h3(src="./img/alexandre-meunier.webp")
+              img.h3(src="./img/alexandre-meunier.png")
             .fla.flcnw.flccv.tl.pl2 Alexandre Meunier
           .fln.flrnw.bb.bg-ghost.o-80.demo-several-results-match
             .fln.flc.pa2
-              img.h3(src="./img/alexandre-stanislawski.webp")
+              img.h3(src="./img/alexandre-stanislawski.png")
             .fla.flcnw.flccv.tl.pl2 Alexandre Stanislawski
           .fln.flrnw.pa2.bg-ghost.o-80 […]
-          .fln.flrnw.bg-ghost.o-80
+          .fln.flrnw.bg-ghost.o-80.br3.br--bottom
             .fln.flc.pa2
-              img.h3(src="./img/zo-asmail.webp")
+              img.h3(src="./img/zo-asmail.png")
             .fla.flcnw.flccv.tl.pl2 Zo Asmail
     aside.notes
       p Great, but I still have to write the complete name
@@ -114,16 +114,16 @@ section.slide--horizontal
   .h-100.flcnw.pa3
     .fln.f1.lh-title.tl.b More Alex
     .fla.flcnw.h-100.f1.ba.bw1.b--titan-white.mt3
-      .fln.flrnw.b.f2.deep-cove.pa1.bb.b--titan-white
-        .fln.w-50.tl Expected result
-        .fln.w-50.tl Keyword to type
+      .fln.flrnw.b.f2.algolia-blue.bb.b--titan-white
+        .fln.w-50.tl.pl2 Expected result
+        .fln.w-50.tl.pl2 Keyword to type
       .fln.flrnw.tl
-        .fln.w-50.flcnw.flcspa.pl5
+        .fln.w-50.flcnw.flcspa.pa2
           .fln Alexander
           .fln Alexandra
           .fln Alexandre
           .fln Alexandria
-        .fln.w-50.flc
+        .fln.w-50.flcnw.flccv
           .flrw.w-80
             .fln.pr2.transparent A, 
             .fln.pr2.transparent Al, 
@@ -137,11 +137,11 @@ section.slide--horizontal
   .h-100.flcnw.pa3
     .fln.f1.lh-title.tl.b N-grams
     .fla.flcnw.h-100.f1.ba.bw1.b--titan-white.mt3.tl.flcspb
-      .fln.flrnw.b.f2.deep-cove.pa1.bb.b--titan-white
-        .fln.w-50 Expected result
-        .fln.w-50 Keyword to type
+      .fln.flrnw.b.f2.algolia-blue.bb.b--titan-white
+        .fln.w-50.pl2 Expected result
+        .fln.w-50.pl2 Keyword to type
       .fln.flrnw
-        .fln.w-50.flcnw.pl5
+        .fln.w-50.flcnw.pl2
           .fln 
             .di.b Alexand
             .di er
@@ -154,7 +154,7 @@ section.slide--horizontal
           .fln 
             .di.b Alexand
             .di ria
-        .fln.w-50.flc
+        .fln.w-50.flcnw.flccv
           .flrw.w-80
             .fln.pr2 A, 
             .fln.pr2 Al, 
@@ -164,17 +164,17 @@ section.slide--horizontal
             .fln.pr2 Alexan, 
             .fln Alexand
       .fln.flrnw.bb.bt.fragment(data-fragment-index="1")
-        .fln.w-50.pl5 Alexander
-        .fln.w-50.f2.flc + Alexande, Alexander
+        .fln.w-50.pl2 Alexander
+        .fln.w-50.f2.flcnw.flccv + Alexande, Alexander
       .fln.flrnw.bb.fragment(data-fragment-index="1") 
-        .fln.w-50.pl5 Alexandra
-        .fln.w-50.f2.flc + Alexandr, Alexandra
+        .fln.w-50.pl2 Alexandra
+        .fln.w-50.f2.flcnw.flccv + Alexandr, Alexandra
       .fln.flrnw.bb.fragment(data-fragment-index="1") 
-        .fln.w-50.pl5 Alexandre
-        .fln.w-50.f2.flc + Alexandr, Alexandre
+        .fln.w-50.pl2 Alexandre
+        .fln.w-50.f2.flcnw.flccv + Alexandr, Alexandre
       .fln.flrnw.fragment(data-fragment-index="1") 
-        .fln.w-50.pl5 Alexandria
-        .fln.w-50.f2.flc + Alexandr, Alexandri, Alexandria
+        .fln.w-50.pl2 Alexandria
+        .fln.w-50.f2.flcnw.flccv + Alexandr, Alexandri, Alexandria
 
 // section.slide--horizontal
 //   .h-100.flcnw.pa3
@@ -208,14 +208,14 @@ section.slide--horizontal
 //           .fln.flrnw.pa2.bg-ghost.o-80 […]
 //           - 
 //             var items = [
-//               {"name": "Alexander Kudelka", "picture": "alexander-kudelka.webp"},
-//               {"name": "Alexander Webb", "picture": "alexander-webb.webp"},
-//               {"name": "Alexandra Prokhorova", "picture": "alexandra-prokhorova.webp"},
-//               {"name": "Alexandre Collin", "picture": "alexandre-collin.webp"},
-//               {"name": "Alexandre Meunier", "picture": "alexandre-meunier.webp"},
-//               {"name": "Alexandre Popp", "picture": "alexandre-popp.webp"},
-//               {"name": "Alexandre Stanislawski", "picture": "alexandre-stanislawski.webp"},
-//               {"name": "Alexandria Avritch", "picture": "alexandria-avritch.webp"}
+//               {"name": "Alexander Kudelka", "picture": "alexander-kudelka.png"},
+//               {"name": "Alexander Webb", "picture": "alexander-webb.png"},
+//               {"name": "Alexandra Prokhorova", "picture": "alexandra-prokhorova.png"},
+//               {"name": "Alexandre Collin", "picture": "alexandre-collin.png"},
+//               {"name": "Alexandre Meunier", "picture": "alexandre-meunier.png"},
+//               {"name": "Alexandre Popp", "picture": "alexandre-popp.png"},
+//               {"name": "Alexandre Stanislawski", "picture": "alexandre-stanislawski.png"},
+//               {"name": "Alexandria Avritch", "picture": "alexandria-avritch.png"}
 //             ]
 //           each item in items
 //             .fln.flrnw.bb.bg-ghost.o-80.f3.demo-alex-result(data-name=`${item.name}`)
@@ -225,10 +225,9 @@ section.slide--horizontal
 //           .fln.flrnw.pa2.bg-ghost.o-80 […]
 
 section.slide--horizontal
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b In CSS:
+  .h-100.flcnw.pa3.bg-near-black
     .fla.flcnw.h-100.flc
-      pre.bg-near-black.pa2.lh-copy.tl.f2.fln
+      pre.pa2.lh-copy.tl.f2.fln
         code.language-scss
           |input[value="a"]          ~ #results #result22,
           |input[value="al"]         ~ #results #result22,
@@ -242,7 +241,7 @@ section.slide--horizontal
           |input[value="alexandria"] ~ #results #result22 {
           |  display: block
           |}
-    .absolute.absolute-0.bg-deep-cove-50.fragment
+    .absolute.absolute-0.bg-black-50.fragment
       .w-100.h-100
         .flrnw.h-100.w-100.flc
           .fln.white.f-subheadline.b.h-50.w-80.flc.flcnw.flcspa
@@ -250,9 +249,9 @@ section.slide--horizontal
             .fln.fragment + accented characters
             .fln.fragment + synonyms
             .fln.fragment + typo-tolerance
-    .absolute.absolute-0.bg-deep-cove-80.fragment
+    .absolute.absolute-0.bg-black-80.fragment
       .w-100.h-100
         .flrnw.h-100.w-100.flc
-          .fln.radical-red.f-headline.b.h-50.w-80.flc.flcnw.flcspa.scale-200
+          .fln.algolia-blue.f-headline.b.h-50.w-80.flc.flcnw.flcspa.scale-200
             .fln x 150
 

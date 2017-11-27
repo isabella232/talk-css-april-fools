@@ -1,19 +1,27 @@
+include ./partials/mixins
 doctype html
 html(lang="en")
   include ./partials/header
 body
     .reveal
-      .slides.unbranded.bg-gradient-primary.lh-copy.white.f3.fw3
+      .slides.unbranded.bg-gradient-dark-inverted.lh-copy.white.f3.fw3
 
         // Title
         section.slide--horizontal.slide--theme1
-          .bg-gradient-april-fools.white.h-100.flcnw.flc
+          .bg-gradient-april-fools.white.h-100.flcnw.flc.relative
             .f-subheadline.lh-title.mh4.ph6 
               .db Building a 
                 .di.b search engine 
               .db with 
                 .di.b CSS
-            // Tim Carry, dev advocate at Algolia. Twitter
+            .absolute.bottom-2.right-2
+              .flrnw
+                .fln.flc.f0
+                  img.br-100.h3.grayscale(src='img/avatar.jpg')
+                .fln.flcnw.flccv.pl2
+                  .fln.tl.f3.b Tim Carry
+                  .fln.tl
+                    a.link.white(href="https://twitter.com/pixelastic") @pixelastic
 
         section.slide--horizontal
           .h-100.flcnw.pa3
@@ -38,35 +46,19 @@ body
 
         section.slide--horizontal
           .h-100.flcnw.pa3
-            .fln.f1.lh-title.tl.b New outcome
+            .fln.f1.lh-title.tl.b A search engine
             .fla.flcnw
               .fla.flrnw
-                .fln.w-25.flc keywords =>
+                .fln.flc.ph4.f2.b.w-20 Keywords
                 .fla.flc 
-                  img(src="./img/input-output.png")
-                .fln.w-25.flc => results
-              // .fln.flrnw.h4.flc.b.f1.fragment
-              //   .fln.w-third Relevant
-              //   .fln.w-third Fast
-              //   .fln.w-third Easy to use
+                  img.w-100(src="./img/input-output.png")
+                .fln.flc.ph4.f2.b.w-20 Results
             aside.notes
               p A search engine, in its most basic forms takes keywords as input and gives you results as output
               p A great search engine also is Relevant, Fast and Easy to use
               p - Relevant because I want matching results (ie. it works)
               p - Fast because I want the processing to be done quickly
               p - Easy to use, want it to look like a real thing, not a CSS hack
-
-        // section.slide--horizontal
-        //   .h-100.flcnw.pa3
-        //     .fln.f1.lh-title.tl.b Game rules
-        //     .fla.flcnw.flc
-        //       .fln.flrnw.w-60.br4.f2
-        //         .fla.bg-white.br3.br--left.ph1.blue CSS
-        //         .fln.bg-orange.ph2 HTML
-        //         .fln.bg-yellow.br3.br--right.pl1.cst-constraint-js
-        //     aside.notes
-        //       p Those are limitations of my system, that I put upon myself
-        //       p Those are the "game rules" I'll follow
 
         section.slide--horizontal
           .h-100.flcnw.pa3
@@ -76,14 +68,6 @@ body
               p Enough talking about the hack, let's show it in action
               p This is the time for the live demo
               p The dangerous time where everything can fail
-
-        // section.slide--horizontal
-        //   .h-100.flcnw.pa3
-        //     .fln.f1.lh-title.tl.b Challenge overview
-        //     .fla.flcnw
-        //       p [] css all the things
-        //       p [] minimal html
-        //       p [] no javascript
 
         section.slide--horizontal
           .h-100.flcnw.pa3
@@ -119,11 +103,11 @@ body
             .fla.flcnw.f-subheadline.flc
               .db
                 .di Selecting only 
-                .di.b.koromiko relevant 
+                .di.b relevant 
                 .di items
               .db 
                 .di from a 
-                .di.b.bittersweet large pool 
+                .di.b large pool 
                 .di of choices
             aside.notes 
               p You can have the most complex and unsemantic HTML structure, you'll still be able to select exactly the one you care about
@@ -139,16 +123,6 @@ body
         include ./slides/ordering-results
         include ./slides/highlight
 
-        // section.slide--horizontal
-        //   .h-100.flcnw.pa3
-        //     .fln.f1.lh-title.tl.b Challenge overview
-        //     .fla.flcnw
-        //       p ✔ fast, relevant, easy to use
-        //       p ✔ minimal html
-        //       p ✘ no javascript
-        //       p ✔ css all the things
-
-        // How to solve a complex problem
         section.slide--horizontal.slide--theme1
           .bg-gradient-april-fools.white.h-100.flcnw.flc
             .f-subheadline.lh-title.mh6.ph5
@@ -159,10 +133,23 @@ body
         section.slide--horizontal
           .h-100.flcnw.pa3
             .fln.f1.lh-title.tl.b Thank you
-            .fla.flcnw
-              p Link to demo
-              p Twitter
-              p Link to slides
+            .fla.flcnw.mt5.h-100
+              .fla.flc
+                a.link.white.f-subheadline.underline(href="https://www.algolia.com/css/demo/") algolia.com/css/demo
+              .fln.h-25.flcnw.flcat.flcch
+                .fln.flrnw
+                  .fln.flcnw.flc.f0
+                    img.h3(src="img/github.png")
+                  .fln.ml3
+                    a.link.white.f1(href="https://github.com/algolia/algoliasearch-css-client") algolia/algoliasearch-css-client
+              .fln.flrnw.flrar.pa3
+                .fln.flrnw
+                  .fln.flc.f0
+                    img.br-100.h3.grayscale(src='img/avatar.jpg')
+                  .fln.flcnw.flccv.pl2
+                    .fln.tl.f3.b Tim Carry
+                    .fln.tl
+                      a.link.white(href="https://twitter.com/pixelastic") @pixelastic
 
         include ./partials/aside-horizontal
         include ./partials/aside-vertical

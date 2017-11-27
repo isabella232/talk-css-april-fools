@@ -1,24 +1,4 @@
-.cst-constraint-js {
-  position: relative;
-  &:before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 2px;
-    height: 3rem;
-    background: white;
-    bottom: -3.5rem;
-    left: 1px;
-  }
-  &:after {
-    position: absolute;
-    content: "JS";
-    bottom: -7rem;
-    left: -1rem;
-  }
-}
-
-
-
 .h-third      { height: calc(100% / 3); }
 .h-two-thirds { height: calc(100% / 1.5); }
+.br6 { border-radius: 6px; }
+

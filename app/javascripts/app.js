@@ -70,7 +70,6 @@ let Talk = {
   customScripts() {
     Talk.demoDynamicValue();
     Talk.demoSeveralResults();
-    Talk.demoAlex();
   },
   // Simulate the typing of the correct value in the input
   demoDynamicValue() {
@@ -94,33 +93,17 @@ let Talk = {
   demoSeveralResults() {
     let input = $('#demo-several-results-input');
     let match = $('.demo-several-results-match');
+    let toRemove = "o-80 bg-ghost bunting";
+    let toAdd = "bg-gradient-blue titan-white"
 
     input.on('input', (event) => {
       let value = $(event.target).val();
       if (value=="alexandre") {
-        match.removeClass('o-80 bg-ghost').addClass('bg-white')
+        match.removeClass(toRemove).addClass(toAdd)
       } else {
-        match.addClass('o-80 bg-ghost').removeClass('bg-white')
+        match.addClass(toRemove).removeClass(toAdd)
       }
     });
   },
-  demoAlex() {
-    let input = $('#demo-alex-input');
-    let results = $('.demo-alex-result');
-
-    input.on('input', (event) => {
-      let value = $(event.target).val();
-      results.each(function(index, result) {
-        var $result = $(result);
-        var name = $result.data('name');
-        var re = new RegExp(`^${value}`, 'i');
-        if (re.test(name) && value !== "") {
-          $result.removeClass('o-80 bg-ghost').addClass('bg-white')
-        } else {
-          $result.addClass('o-80 bg-ghost').removeClass('bg-white')
-        }
-      });
-    });
-  }
 }
 export default Talk;

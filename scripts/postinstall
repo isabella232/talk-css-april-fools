@@ -8,7 +8,8 @@ cp ./node_modules/reveal.js/js/reveal.js ./app/assets/js/vendors/reveal.js
 cp ./node_modules/reveal.js/css/reveal.scss ./app/styles/vendors/_reveal.scss
 
 ## tachyons-algolia
-cp -r ./node_modules/tachyons-algolia/src/ ./app/styles/vendors/tachyons-algolia/
+cp -rf ./node_modules/tachyons-algolia/src/ ./app/styles/vendors/tachyons-algolia/
+cp -rf ./node_modules/tachyons-algolia/src/fonts/fontawesome-* ./app/assets/fonts/
 
 ## jQuery
 cp ./node_modules/jquery/dist/jquery.min.js ./app/assets/js/vendors/jquery.js

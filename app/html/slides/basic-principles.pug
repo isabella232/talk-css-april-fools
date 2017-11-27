@@ -1,64 +1,69 @@
 section.slide--horizontal
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Core principles
+  .h-100.flcnw.bg-deep-cove
+    .fln.f1.lh-title.tl.b.pl3.pt3 Core principles
     .fla.flcnw.h-100
       .fln.h-50.flc
         .fln.w-80.flrnw.flc
-          .fln.w-50
-            input.fln.pa2.br2.f1.w-80.bunting(type="text" value="tim")
           .fln.w-50.flc
-            .db.ba.pa2.w-50.bg-ghost-80.f1.bunting #result
-      .fln.h-50.flc
+            +input.w-70.bg-bunting(value="tim")
+          .fln.w-50.flc
+            .db.shadow-1.br6.bg-titan-white.bunting.w-50.pa3.f1.o-50 #result
+      .fln.h-50.flc.bg-near-black
         pre.bg-near-black.pa4.lh-copy.tl.f1
           code.language-html
             |&lt;input type="text" value="tim" /&gt;
             |&lt;div id="result"&gt;&lt;/div&gt;
 
 section.slide--horizontal(data-transition="none")
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Core principles
+  .h-100.flcnw.bg-deep-cove
+    .fln.f1.lh-title.tl.b.pl3.pt3 Core principles
     .fla.flcnw.h-100
       .fln.h-50.flc
         .fln.w-80.flrnw.flc
-          .fln.w-50
-            input.fln.pa2.br2.f1.w-80.bunting.bg-shamrock(type="text" value="tim")
           .fln.w-50.flc
-            .db.ba.pa2.w-50.bg-ghost-80.f1.bunting #result
-      .fln.h-50.flc
+            +input.w-70.bg-gradient-blue(value="tim")
+          .fln.w-50.flc
+            .db.shadow-1.br6.bg-titan-white.bunting.w-50.pa3.f1.o-50 #result
+      .fln.h-50.flc.bg-near-black
         pre.bg-near-black.pa4.lh-copy.tl.f1
           code.language-scss
             |input[value="tim"] {
-            |  background: green;
+            |  background: blue;
             |}
 
 section.slide--horizontal(data-transition="none")
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Core principles
+  .h-100.flcnw.bg-deep-cove
+    .fln.f1.lh-title.tl.b.pl3.pt3 Core principles
     .fla.flcnw.h-100
       .fln.h-50.flc
         .fln.w-80.flrnw.flc
-          .fln.w-50
-            input.fln.pa2.br2.f1.w-80.bunting(type="text" value="tim")
           .fln.w-50.flc
-            .db.ba.pa2.w-50.bg-shamrock.f1.bunting.transparent #result
-      .fln.h-50.flc
+            +input.w-70.bg-bunting(value="tim")
+          .fln.w-50.flc
+            .db.shadow-1.br6.bg-gradient-blue.titan-white.w-50.pa3.f1 #result
+      .fln.h-50.flc.bg-near-black
         pre.bg-near-black.pa4.lh-copy.tl.f1
           code.language-scss
             |input[value="tim"] ~ #result {
-            |  background: green;
+            |  background: blue;
             |}
 
 section.slide--horizontal(data-transition="none")
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b Core principles
+  .h-100.flcnw.bg-deep-cove
+    .fln.f1.lh-title.tl.b.pl3.pt3 Core principles
     .fla.flcnw.h-100
       .fln.h-50.flc
         .fln.w-80.flrnw.flc
-          .fln.w-50
-            input.fln.pa2.br2.f1.w-80.bunting(type="text" value="tim")
           .fln.w-50.flc
-            .db.ba.pa2.w-50.bg-white.f1.bunting.transparent Tim Carry
-      .fln.h-50.flc
+            +input.w-70.bg-bunting(value="tim")
+          .fln.w-50.flc
+            .fln.flrnw.shadow-1.br6.bg-gradient-blue.titan-white.pa3.f1
+              .fln.flc.pr2
+                img.h3.br-100.grayscale(src="./img/avatar.jpg")
+              .fla.flcnw.flccv.tl.pl2 Tim Carry
+
+
+      .fln.h-50.flc.bg-near-black
         pre.bg-near-black.pa4.lh-copy.tl.f1
           code.language-scss
             |input[value="tim"] ~ #result:before {
