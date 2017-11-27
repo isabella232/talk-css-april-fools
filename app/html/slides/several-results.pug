@@ -27,7 +27,7 @@ section.slide--horizontal
         pre.pa4.lh-copy.tl.f3
           code.language-html
             |&lt;input 
-            |  type="text" value="" 
+            |  type="search" value="" 
             |  oninput="…" 
             |/&gt;
             |&lt;!-- one div per employee --&gt;
@@ -59,9 +59,9 @@ section.slide--horizontal
           pre.ph3.pb3.lh-copy.tl.f3.w-100.fragment
             code.language-scss
               |// Show only for matching keywords
-              |input[value="alexandre"] ~ #result #result15,
-              |input[value="alexandre"] ~ #result #result16,
-              |input[value="alexandre"] ~ #result #result17 {
+              |input[value="alexandre" i] ~ #result #result15,
+              |input[value="alexandre" i] ~ #result #result16,
+              |input[value="alexandre" i] ~ #result #result17 {
               |  display: block
               |}
         
@@ -75,9 +75,9 @@ section.slide--horizontal
         .fln.h-50.flc
           pre.bg-near-black.pa3.lh-copy.tl.f3
             code.language-scss
-              |input[value="alexandre"] ~ #result #result15,
-              |input[value="alexandre"] ~ #result #result16,
-              |input[value="alexandre"] ~ #result #result17 {
+              |input[value="alexandre" i] ~ #result #result15,
+              |input[value="alexandre" i] ~ #result #result16,
+              |input[value="alexandre" i] ~ #result #result17 {
               |  display: block
               |}
 
@@ -110,135 +110,198 @@ section.slide--horizontal
       p Would be better if I could find them all, just by typing alex
       p I should have to ask my users to type a complete keyword if I already have matches for an incomplete one
 
-section.slide--horizontal
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b More Alex
-    .fla.flcnw.h-100.f1.ba.bw1.b--titan-white.mt3
-      .fln.flrnw.b.f2.algolia-blue.bb.b--titan-white
-        .fln.w-50.tl.pl2 Expected result
-        .fln.w-50.tl.pl2 Keyword to type
-      .fln.flrnw.tl
-        .fln.w-50.flcnw.flcspa.pa2
-          .fln Alexander
-          .fln Alexandra
-          .fln Alexandre
-          .fln Alexandria
-        .fln.w-50.flcnw.flccv
-          .flrw.w-80
-            .fln.pr2.transparent A, 
-            .fln.pr2.transparent Al, 
-            .fln.pr2.transparent Ale, 
-            .fln Alex
-            .fln.pr2.transparent , Alexa, 
-            .fln.pr2.transparent Alexan, 
-            .fln.transparent Alexand
+section.slide--horizontal.debugs
+  .h-100.flcnw.pa3.bg-gradient-dark
+    .fln.f1.lh-title.tl.b Searching and Indexing
+    .fla.flcnw.h-100
+      .fla.flrnw
+        .w-50.flc.f-subheadline
+          .b Searching
+        .w-50.flc
+          .fln.f1.w-90
+            .db What will I find if I
+            .db
+              .di search for 
+              .dib.v-mid
+                .br6.pa3.flrnw.bg-bunting
+                  .fln.flc.f2.mr3.titan-white-50
+                    .icon.icon-search
+                  .titan-white.f2 Alex
+              .di ?
+      .fla.flrnw
+        .w-50.flc.f-subheadline
+          .b Indexing
+        .w-50.flc
+          .fln.f1.w-90
+            .di What should a user type to find  
+            .dib.v-mid.bg-gradient-blue.titan-white.br6.pa2
+              .fln.flc
+                img.h3.mr2(src="./img/alexandria-avritch.png")
+                .di Alexandria
+            .di ?
+
 
 section.slide--horizontal
-  .h-100.flcnw.pa3
-    .fln.f1.lh-title.tl.b N-grams
-    .fla.flcnw.h-100.f1.ba.bw1.b--titan-white.mt3.tl.flcspb
-      .fln.flrnw.b.f2.algolia-blue.bb.b--titan-white
-        .fln.w-50.pl2 Expected result
-        .fln.w-50.pl2 Keyword to type
-      .fln.flrnw
-        .fln.w-50.flcnw.pl2
-          .fln 
-            .di.b Alexand
-            .di er
-          .fln 
-            .di.b Alexand
-            .di ra
-          .fln 
-            .di.b Alexand
-            .di re
-          .fln 
-            .di.b Alexand
-            .di ria
-        .fln.w-50.flcnw.flccv
-          .flrw.w-80
-            .fln.pr2 A, 
-            .fln.pr2 Al, 
-            .fln.pr2 Ale, 
-            .fln Alex
-            .fln.pr2 , Alexa, 
-            .fln.pr2 Alexan, 
-            .fln Alexand
-      .fln.flrnw.bb.bt.fragment(data-fragment-index="1")
-        .fln.w-50.pl2 Alexander
-        .fln.w-50.f2.flcnw.flccv + Alexande, Alexander
-      .fln.flrnw.bb.fragment(data-fragment-index="1") 
-        .fln.w-50.pl2 Alexandra
-        .fln.w-50.f2.flcnw.flccv + Alexandr, Alexandra
-      .fln.flrnw.bb.fragment(data-fragment-index="1") 
-        .fln.w-50.pl2 Alexandre
-        .fln.w-50.f2.flcnw.flccv + Alexandr, Alexandre
-      .fln.flrnw.fragment(data-fragment-index="1") 
-        .fln.w-50.pl2 Alexandria
-        .fln.w-50.f2.flcnw.flccv + Alexandr, Alexandri, Alexandria
-
-// section.slide--horizontal
-//   .h-100.flcnw.pa3
-//     .fln.f1.lh-title.tl.b In CSS:
-//     .fla.flcnw.h-100.flc
-//       pre.bg-near-black.pa2.lh-copy.tl.f2.fln
-//         code.language-scss
-//           |input[value="a"]          ~ #results #result18,
-//           |input[value="al"]         ~ #results #result18,
-//           |input[value="ale"]        ~ #results #result18,
-//           |input[value="alex"]       ~ #results #result18,
-//           |input[value="alexa"]      ~ #results #result18,
-//           |input[value="alexan"]     ~ #results #result18,
-//           |input[value="alexand"]    ~ #results #result18,
-//           |input[value="alexandr"]   ~ #results #result18,
-//           |input[value="alexandri"]  ~ #results #result18,
-//           |input[value="alexandria"] ~ #results #result18 {
-//           |  display: block
-//           |}
-
-// section.slide--horizontal
-//   .h-100.flcnw.pa3
-//     .fln.f1.lh-title.tl.b Several results at once
-//     .fla.flrnw.h-100
-//       .fln.w-50.flc.flcnw
-//         .fln.flc
-//           input#demo-alex-input.pa2.br2.f1.w-80.bunting(type="text" value="")
-//
-//       .fln.w-50.flc
-//         .fln.flcnw.bg-white.bunting.pa2.br3.ba.bw1.w-70
-//           .fln.flrnw.pa2.bg-ghost.o-80 […]
-//           - 
-//             var items = [
-//               {"name": "Alexander Kudelka", "picture": "alexander-kudelka.png"},
-//               {"name": "Alexander Webb", "picture": "alexander-webb.png"},
-//               {"name": "Alexandra Prokhorova", "picture": "alexandra-prokhorova.png"},
-//               {"name": "Alexandre Collin", "picture": "alexandre-collin.png"},
-//               {"name": "Alexandre Meunier", "picture": "alexandre-meunier.png"},
-//               {"name": "Alexandre Popp", "picture": "alexandre-popp.png"},
-//               {"name": "Alexandre Stanislawski", "picture": "alexandre-stanislawski.png"},
-//               {"name": "Alexandria Avritch", "picture": "alexandria-avritch.png"}
-//             ]
-//           each item in items
-//             .fln.flrnw.bb.bg-ghost.o-80.f3.demo-alex-result(data-name=`${item.name}`)
-//               .fln.flc.pa2
-//                 img.h2(src=`./img/${item.picture}`)
-//               .fla.flcnw.flccv.tl.pl2 #{item.name}
-//           .fln.flrnw.pa2.bg-ghost.o-80 […]
+  .h-100.flcnw.pa3.bg-gradient-dark
+    .fla.flcnw.h-100.f1.mt3
+      .fln.flrnw.b.f2.titan-white.b
+        .fln.w-40.tl.pl2 Potential results:
+        .fln.w-60.tl.pl2 Keyword to type:
+      .fla.flrnw.tl
+        .fln.w-40.flc
+          .fln.flrnw.bg-gradient-blue.titan-white.br6
+            .fln.flc.pa2
+              img.h3(src="./img/alexander-kudelka.png")
+            .fla.flcnw.flccv.tl.pl2.pr3 Alexander
+        .fln.w-60.flc.f2
+          .fln.flrw.w-100
+            .fln.pr2.fragment(data-fragment-index="1")
+              .code a
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="1")
+              .code al
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="1")
+              .code ale
+              .di , 
+            .fln.pr2
+              .code alex
+              .di.fragment(data-fragment-index="2") , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexa
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexan
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexand
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexande
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexander
+      .fla.flrnw.tl
+        .fln.w-40.flc
+          .fln.flrnw.bg-gradient-blue.titan-white.br6
+            .fln.flc.pa2
+              img.h3(src="./img/alexandra-prokhorova.png")
+            .fla.flcnw.flccv.tl.pl2.pr3 Alexandra
+        .fln.w-60.flc.f2
+          .fln.flrw.w-100
+            .fln.pr2.fragment(data-fragment-index="1")
+              .code a
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="1")
+              .code al
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="1")
+              .code ale
+              .di , 
+            .fln.pr2
+              .code alex
+              .di.fragment(data-fragment-index="2") , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexa
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexan
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexand
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexandr
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexandra
+      .fla.flrnw.tl
+        .fln.w-40.flc
+          .fln.flrnw.bg-gradient-blue.titan-white.br6
+            .fln.flc.pa2
+              img.h3(src="./img/alexandre-meunier.png")
+            .fla.flcnw.flccv.tl.pl2.pr3 Alexandre
+        .fln.w-60.flc.f2
+          .fln.flrw.w-100
+            .fln.pr2.fragment(data-fragment-index="1")
+              .code a
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="1")
+              .code al
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="1")
+              .code ale
+              .di , 
+            .fln.pr2
+              .code alex
+              .di.fragment(data-fragment-index="2") , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexa
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexan
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexand
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexandr
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexandre
+      .fla.flrnw.tl
+        .fln.w-40.flc
+          .fln.flrnw.bg-gradient-blue.titan-white.br6
+            .fln.flc.pa2
+              img.h3(src="./img/alexandria-avritch.png")
+            .fla.flcnw.flccv.tl.pl2.pr3 Alexandria
+        .fln.w-60.flc.f2
+          .fln.flrw.w-100
+            .fln.pr2.fragment(data-fragment-index="1")
+              .code a
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="1")
+              .code al
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="1")
+              .code ale
+              .di , 
+            .fln.pr2
+              .code alex
+              .di.fragment(data-fragment-index="2") , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexa
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexan
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexand
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexandr
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexandri
+              .di , 
+            .fln.pr2.fragment(data-fragment-index="2")
+              .code alexandria
 
 section.slide--horizontal
   .h-100.flcnw.pa3.bg-near-black
     .fla.flcnw.h-100.flc
       pre.pa2.lh-copy.tl.f2.fln
         code.language-scss
-          |input[value="a"]          ~ #results #result22,
-          |input[value="al"]         ~ #results #result22,
-          |input[value="ale"]        ~ #results #result22,
-          |input[value="alex"]       ~ #results #result22,
-          |input[value="alexa"]      ~ #results #result22,
-          |input[value="alexan"]     ~ #results #result22,
-          |input[value="alexand"]    ~ #results #result22,
-          |input[value="alexandr"]   ~ #results #result22,
-          |input[value="alexandri"]  ~ #results #result22,
-          |input[value="alexandria"] ~ #results #result22 {
+          |input[value="a" i]          ~ #results #result22,
+          |input[value="al" i]         ~ #results #result22,
+          |input[value="ale" i]        ~ #results #result22,
+          |input[value="alex" i]       ~ #results #result22,
+          |input[value="alexa" i]      ~ #results #result22,
+          |input[value="alexan" i]     ~ #results #result22,
+          |input[value="alexand" i]    ~ #results #result22,
+          |input[value="alexandr" i]   ~ #results #result22,
+          |input[value="alexandri" i]  ~ #results #result22,
+          |input[value="alexandria" i] ~ #results #result22 {
           |  display: block
           |}
     .absolute.absolute-0.bg-black-50.fragment

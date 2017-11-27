@@ -79,7 +79,10 @@ let Talk = {
     let match = $('#demo-dynamic-value-match');
 
     input.on('input', (event) => {
-      let value = $(event.target).val();
+      let value = $(event.target).val()
+      if (value.length) {
+        value = value.toLowerCase()
+      }
       valueNode.html(`"${value}"`)
       if (value=="tim") {
         nomatch.hide();
