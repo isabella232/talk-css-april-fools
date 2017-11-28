@@ -77,6 +77,7 @@ let Talk = {
     let valueNode = $('#demo-dynamic-value-value');
     let nomatch = $('#demo-dynamic-value-nomatch');
     let match = $('#demo-dynamic-value-match');
+    let css = $('#demo-dynamic-value-css');
 
     input.on('input', (event) => {
       let value = $(event.target).val()
@@ -87,9 +88,11 @@ let Talk = {
       if (value=="tim") {
         nomatch.hide();
         match.show();
+        css.removeClass('o-30');
       } else {
         nomatch.show();
         match.hide();
+        css.addClass('o-30');
       }
     });
   },
