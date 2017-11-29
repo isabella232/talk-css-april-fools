@@ -7,6 +7,12 @@
   overflow: visible;
 }
 
+// Prevent font to slightly change on each slide change, as well as other fading
+// artifacts
+pre, section {
+  will-change: opacity;
+}
+
 .reveal .slides > section {
   padding: 0;
   width: auto;
